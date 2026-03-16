@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    .contact-page {
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-page h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-page p {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--color-text-muted);
+      font-weight: 300;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      font-size: 1.5rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+      transition: border-bottom-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .contact-link:hover {
+      border-bottom-color: var(--color-text);
+      opacity: 1; /* override global slightly */
+    }
+
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <div class="container nav">
+      <a href="./index.html" class="logo">Jian Choi.</a>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./ux-design.html">UX Design</a>
+        <a href="./work.html">Work</a>
+        <a href="./contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container contact-page">
+      <div class="reveal reveal-immediate">
+        <div class="contact-links">
+          <a href="mailto:choijian@sookmyung.ac.kr" class="contact-link">choijian@sookmyung.ac.kr</a>
+          <a href="https://instagram.com/jianarchive" target="_blank" class="contact-link">@jianarchive</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" style="margin-top: auto;">
+    <div class="container">
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

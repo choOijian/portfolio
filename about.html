@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    .about-page {
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      display: grid;
+      grid-template-columns: 4fr 8fr;
+      gap: var(--spacing-xl);
+      align-items: start;
+    }
+
+    .about-hero-image {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 4px;
+      position: sticky;
+      top: calc(var(--spacing-xl) + 60px);
+    }
+
+    .about-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .about-content .role {
+      font-size: 1.5rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--spacing-lg);
+      font-weight: 300;
+    }
+
+    .intro-paragraph {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-weight: 300;
+      color: var(--color-text);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .intro-paragraph:last-child {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .strengths {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .strengths span {
+      display: inline-block;
+    }
+
+    .resume-section {
+      margin-top: var(--spacing-md);
+    }
+    
+    .resume-section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .resume-item {
+      display: flex;
+      gap: var(--spacing-md);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .resume-year {
+      min-width: 60px;
+    }
+
+    .resume-details strong {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    @media (max-width: 900px) {
+      .about-page {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      .about-hero-image {
+        position: static;
+        max-width: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <div class="container nav">
+      <a href="./index.html" class="logo">Jian Choi.</a>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html" class="active">About</a>
+        <a href="./ux-design.html">UX Design</a>
+        <a href="./work.html">Work</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container about-page">
+      <div class="reveal reveal-immediate">
+        <img class="about-hero-image" src="https://i.postimg.cc/vZdQXqnt/IMG-0447.jpg" alt="Jian Choi Portrait">
+      </div>
+      
+      <div class="about-content reveal reveal-immediate" style="transition-delay: 0.2s;">
+        <h1>최지안</h1>
+        <p class="role">Visual Designer</p>
+        
+        <p class="intro-paragraph">
+          영상 그 자체를 좋아하며, 장면의 분위기와 감정을 관찰하고 그것을 시각적으로 풀어내는 디자이너입니다.
+        </p>
+        <p class="intro-paragraph">
+          영화를 보는 것을 좋아하고, 음악과 소리가 함께 어우러지는 영상을 특히 좋아합니다. 각각의 프레임 속에 담긴 고유한 이야기와 미학을 탐구하여, 관객에게 깊은 울림을 전달하는 디자인을 추구합니다.
+        </p>
+
+        <div class="resume-section">
+          <h3>Education</h3>
+          <div class="resume-item">
+            <span class="resume-year">2024 –</span>
+            <div class="resume-details">
+              <strong>숙명여자대학교</strong><br>
+              시각영상디자인과
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Tools</h3>
+          <div class="strengths" style="margin-top: 0.8rem;">
+            <span>Premiere Pro</span> &middot;
+            <span>After Effects</span> &middot;
+            <span>Illustrator</span> &middot;
+            <span>Photoshop</span> &middot;
+            <span>Figma</span> &middot;
+            <span>Cinema 4D</span>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Interests</h3>
+          <div class="strengths" style="margin-top: 0.8rem;">
+            <span>Music Video Art Direction</span> &middot;
+            <span>Motion Graphics Design</span> &middot;
+            <span>Multimedia Design</span> &middot;
+            <span>Film Production</span>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Strengths</h3>
+          <div class="strengths" style="margin-top: 0.8rem;">
+            <span>Persistence</span> &middot;
+            <span>Composure</span> &middot;
+            <span>Cinematic Sensibility</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/jianarchive" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
