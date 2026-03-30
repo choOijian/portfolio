@@ -115,12 +115,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       opacity: 0;
       pointer-events: none;
       transition: opacity var(--transition-fast);
       overflow-y: auto;
-      padding: var(--spacing-md);
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
     }
 
     .lightbox.show {
@@ -129,9 +132,8 @@
     }
 
     .lightbox-close {
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
+      align-self: flex-start;
+      margin-bottom: var(--spacing-lg);
       font-size: 1.1rem;
       font-weight: 500;
       color: var(--color-text-muted);
@@ -147,7 +149,7 @@
     .lightbox-content {
       width: 100%;
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -317,45 +319,19 @@
     
     .week-item {
       font-size: 5rem;
-      font-weight: 800;
+      font-weight: 500;
       text-decoration: none;
-      transition: all 0.3s ease;
-      color: var(--color-text);
-      cursor: default;
-      position: relative;
-    }
-    
-    .week-item.active {
+      transition: font-weight 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      color: #BBBBBB;
       cursor: pointer;
+      position: relative;
+      display: inline-block;
     }
     
-    .week-item.active::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      bottom: -10px;
-      left: 0;
-      background-color: var(--color-text);
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 0.3s ease-out;
-    }
-    
-    .week-item.active:hover {
-      color: var(--color-text-muted);
-    }
-    
-    .week-item.active:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-      background-color: var(--color-text-muted);
-    }
-    
-    .week-item.inactive {
-      color: #e5e5e5;
-      background: transparent;
-      pointer-events: none;
+    .week-item:hover {
+      font-weight: 800;
+      color: #000000;
+      transform: scale(1.1);
     }
     
     @media (max-width: 768px) {
@@ -366,6 +342,59 @@
         font-size: 3.5rem;
       }
     }
+
+    /* W3 specific appended styles */
+    .detail-title-wrapper-w3 { margin-bottom: calc(var(--spacing-lg) + 1rem); width: 100%; margin-top: 4rem; }
+    .w3-title h2 { font-size: 4rem; margin-bottom: var(--spacing-sm); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; color: var(--color-text); word-break: keep-all; text-align: left; }
+    .content-section { width: 100%; margin-bottom: 4rem; text-align: left; }
+    .w3-section-title { font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700; letter-spacing: -0.02em; color: var(--color-text); border-bottom: 2px solid var(--color-text); padding-bottom: 0.6rem; display: inline-block; text-align: left; }
+    .w3-info-list.info-list { list-style: none; padding-left: 0; margin-bottom: 2rem; }
+    .w3-info-list.info-list li { position: relative; padding-left: 1.5rem; margin-bottom: 1.2rem; font-size: 1.2rem; color: var(--color-text); line-height: 1.6; word-break: keep-all; font-weight: 400; text-align: left; }
+    .w3-info-list.info-list li::before { content: '•'; position: absolute; left: 0; color: #999; font-size: 1.2rem; line-height: 1.6; }
+    .w3-info-list.info-list li strong { font-weight: 600; color: var(--color-text); }
+    .sub-criteria { margin-top: 0.4rem; color: #888; font-size: 1.05rem; line-height: 1.5; }
+    .sub-criteria .criteria-title { display: block; margin-bottom: 0.2rem; }
+    .sub-criteria p { margin: 0; padding-left: 0.8rem; }
+    .image-grid-2x2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem; width: 100%; }
+    .grid-img { width: 100%; height: auto; border-radius: 4px; }
+    .interview-step { margin-bottom: 2rem; }
+    .step-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; color: #111; text-align: left; }
+    .step-desc { font-size: 1.15rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; word-break: keep-all; font-weight: 400; text-align: left; }
+    .step-img { width: 100%; border-radius: 4px; border: 1px solid #eee; cursor: zoom-in; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .step-img.zoomed { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: zoom-out; z-index: 10; position: relative; }
+    .step-divider { border: 0; border-top: 1px dashed #dedede; margin: 3rem 0; width: 100%; display: block; }
+    .quote-box { margin-top: 0.8rem; padding: 1.2rem; background-color: #fafafa; border-left: 3px solid #ccc; border-radius: 0 4px 4px 0; text-align: left; }
+    .quote-box p { font-size: 1.1rem; color: #444; line-height: 1.6; margin-bottom: 0.8rem; }
+    .quote-box p:last-child { margin-bottom: 0; }
+    .insight-box { background-color: #f8f9fa; border: 1px solid #eee; border-left: 4px solid #111; padding: 2rem; border-radius: 4px; margin-top: 2rem; margin-bottom: 2rem; text-align: left; }
+    .insight-box .w3-section-title { font-size: 1.6rem; }
+    .affinity-container { display: flex; flex-direction: column; gap: 2rem; align-items: center; margin-top: 1.5rem; width: 100%; }
+    .affinity-image-box { width: 100%; }
+    .affinity-img { width: 100%; border: 1px solid #ddd; border-radius: 4px; cursor: zoom-in; transition: box-shadow 0.3s ease; }
+    .affinity-img:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .affinity-caption { font-size: 0.95rem; color: #888; margin-top: 1rem; line-height: 1.6; word-break: keep-all; text-align: center; font-weight: 400; }
+    .affinity-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; }
+    .legend-box, .category-box { background: #fff; border: 1px solid #eee; padding: 1.5rem; border-radius: 4px; margin: 0; text-align: left; }
+    .legend-title { font-size: 1.1rem; font-weight: 700; color: #111; margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; }
+    .w3-info-list.legend-list { list-style: none; padding: 0; margin: 0; }
+    .w3-info-list.legend-list li { display: flex; align-items: flex-start; margin-bottom: 0.8rem; font-size: 1.05rem; line-height: 1.5; color: #444; word-break: keep-all; font-weight: 400; text-align: left; padding: 0; }
+    .w3-info-list.legend-list li::before { display: none; }
+    .w3-info-list.legend-list li:last-child { margin-bottom: 0; }
+    .color-dot { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-top: 5px; margin-right: 10px; flex-shrink: 0; }
+    .dot-blue { background-color: #3b82f6; }
+    .dot-pink { background-color: #ec4899; }
+    .dot-green { background-color: #22c55e; }
+    .text-blue { color: #3b82f6; font-weight: 800; }
+    .text-pink { color: #ec4899; font-weight: 800; }
+    .text-green { color: #22c55e; font-weight: 800; }
+    .category-box p { font-size: 1.05rem; color: #555; line-height: 1.6; margin: 0; word-break: keep-all; text-align: left; }
+    .simple-lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+    .simple-lightbox.show { opacity: 1; pointer-events: auto; }
+    .simple-lightbox img { max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 4px; }
+    .simple-lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; font-weight: 300; }
+
+    @media (max-width: 768px) { .affinity-details { grid-template-columns: 1fr; gap: 1rem; } }
+    @media (max-width: 600px) { .image-grid-2x2 { grid-template-columns: 1fr; gap: 1rem; } .insight-box { padding: 1.5rem; } }
   </style>
 </head>
 <body>
@@ -391,30 +420,30 @@
 
       <div class="weeks-list" id="worksGrid">
         
-        <!-- Week 2 (Active) -->
-        <a href="#detail" class="week-item active reveal reveal-immediate" data-category="ux" style="transition-delay: 0.1s;" id="uxCard">
+        <!-- Week 2 -->
+        <a href="#detail" class="week-item reveal reveal-immediate" data-category="ux" style="transition-delay: 0.1s;" id="uxCard">
           Week 2
         </a>
         
-        <!-- Week 3 (Inactive) -->
-        <div class="week-item inactive reveal reveal-immediate" style="transition-delay: 0.2s;">
+        <!-- Week 3 -->
+        <a href="./week3.html" class="week-item reveal reveal-immediate" style="transition-delay: 0.2s;">
           Week 3
-        </div>
+        </a>
 
-        <!-- Week 4 (Inactive) -->
-        <div class="week-item inactive reveal reveal-immediate" style="transition-delay: 0.3s;">
+        <!-- Week 4 -->
+        <a href="./week4.html" class="week-item reveal reveal-immediate" style="transition-delay: 0.3s;">
           Week 4
-        </div>
+        </a>
 
       </div>
     </section>
 
     <!-- Lightbox Modal (이제 상세 화면 역할을 수행함) -->
     <div class="lightbox" id="uxLightbox">
-      <a href="#" class="lightbox-close" id="closeLightbox">&larr; Back to List</a>
       <div class="lightbox-content">
-        <div class="lightbox-text" style="max-width: 100%; text-align: left; margin-bottom: var(--spacing-lg); width: 100%; margin-top: 5rem;">
-          <h2>[Week2] 관찰하기</h2>
+        <a href="#" class="lightbox-close" id="closeLightbox">&larr; Back to List</a>
+        <div class="lightbox-text" style="max-width: 100%; text-align: left; margin-bottom: var(--spacing-lg); width: 100%;">
+          <h2>관찰하기</h2>
         </div>
         
         <!-- Summary -->
@@ -468,9 +497,112 @@
           </div>
         </div>
 
+        <!-- ====== WEEK 3 CONTENT MOVED TO WEEK 2 ====== -->
+        <div style="margin-top: 6rem; width: 100%;">
+          <div class="detail-title-wrapper-w3 w3-title">
+            <h2>디자인 에스노그라피</h2>
+          </div>
+          
+          <!-- Section 1 -->
+          <div class="content-section">
+            <h3 class="w3-section-title">1. 사용자 관찰</h3>
+            <ul class="w3-info-list info-list">
+              <li>
+                <strong>대상:</strong> 숙명여자대학교 배구 동아리 부원 (약 19명)
+                <div class="sub-criteria">
+                  <span class="criteria-title">&gt; 선정 기준 :</span>
+                  <p>임원진 5명 (회장/매니저/기획부/홍보부/총무부)</p>
+                  <p>포지션, 가입 기간, 활동 빈도 등 다양한 활동 배경을 가진 일반 부원 14명</p>
+                </div>
+              </li>
+              <li><strong>관찰 상황:</strong> 동아리 훈련 및 경기 상황, 휴식 시간, 장비 착용 및 이동 모습</li>
+              <li><strong>주요 특징:</strong></li>
+            </ul>
+            
+            <div class="image-grid-2x2">
+              <img src="https://i.postimg.cc/NFBjq25k/IMG_1127_2_min.jpg" alt="Observation 1" class="grid-img" />
+              <img src="https://i.postimg.cc/LXMHLgBH/IMG_1128_2_min.jpg" alt="Observation 2" class="grid-img" />
+              <img src="https://i.postimg.cc/tTHXWntn/IMG_1129_2_min.jpg" alt="Observation 3" class="grid-img" />
+              <img src="https://i.postimg.cc/fLjMKWBT/IMG_1130_2_min.jpg" alt="Observation 4" class="grid-img" />
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="content-section">
+            <h3 class="w3-section-title">2. 심층 인터뷰</h3>
+            
+            <!-- Step 1 -->
+            <div class="interview-step">
+              <h4 class="step-title">Step 1: 인터뷰 질문</h4>
+              <p class="step-desc">리서치 목적에 따라 동아리 운영, 커뮤니케이션, 경험 등 카테고리로 세분화된 질문지를 설계했습니다.</p>
+              <img src="https://i.postimg.cc/fW9CNmQR/seukeulinsyas-2026-03-27-ohu-6-19-00.png" alt="질문지 설계 이미지" class="step-img" onclick="this.classList.toggle('zoomed')" title="클릭하여 확대/축소" />
+            </div>
+
+            <hr class="step-divider" />
+
+            <!-- Step 2 -->
+            <div class="interview-step">
+              <h4 class="step-title">Step 2: 심층 인터뷰 내용</h4>
+              <ul class="w3-info-list info-list" style="margin-bottom: 0;">
+                <li>
+                  <strong>방법론:</strong> <strong style="font-weight: 800; color: #111;">맥락적 질문법 (Contextual Inquiry)</strong>
+                  <p style="margin-top: 0.6rem; margin-bottom: 1.2rem; color: #666; font-size: 1.1rem; line-height: 1.6; word-break: keep-all; font-weight: 400;">
+                    사용자가 실제 배구 훈련을 하거나 장비를 사용하는 현장에서 직접 관찰하며 질문을 던지는 방식을 택하여, 기억의 왜곡 없이 생생한 페인 포인트(Pain Point)를 포착함.
+                  </p>
+                </li>
+                <li><strong>대상 설명:</strong> 임원진 5명 및 다양한 배경의 일반 부원 14명을 대상으로 현장에서 진행함.</li>
+                <li>
+                  <strong>핵심 인터뷰 기록:</strong>
+                  <div class="quote-box">
+                    <p>"특정 선수 영상만 골라 찾기가 어려워서라고 생각합니다."</p>
+                    <p>"애매한 포지션 때문에 소극적인 태도, 성취감이 낮아져 참여율 저조 우려가 있다."</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Section 3 -->
+          <div class="content-section insight-box">
+            <h3 class="w3-section-title" style="border-bottom: none; margin-bottom: 0.5rem; padding-bottom: 0;">3. 패턴 도출</h3>
+            <p class="step-desc" style="color: #444; margin-bottom: 1.5rem;">반복적인 관찰과 인터뷰 데이터를 분석하여 사용자들의 공통된 행동 패턴과 니즈를 도출했습니다.</p>
+            
+            <div class="affinity-container">
+              <!-- Main: Affinity Image -->
+              <div class="affinity-image-box">
+                <img src="https://i.postimg.cc/Y2Tp4cPG/seukeulinsyas-2026-03-27-ohu-6-24-01.png" alt="Affinity Diagram" class="affinity-img" id="affinityImg" title="클릭하여 확대/축소" />
+                <p class="affinity-caption">팀원들과 함께 수집된 사용자 목소리와 관찰 내용을 유사성에 따라 그룹화하고, 핵심 인사이트를 도출하는 어피니티 다이어그램 분석을 진행했습니다.</p>
+              </div>
+              
+              <!-- Insights: Data Architecture Legend -->
+              <div class="affinity-details">
+                <div class="legend-box">
+                  <h5 class="legend-title">데이터 분류 체계</h5>
+                  <ul class="w3-info-list legend-list">
+                    <li><span class="color-dot dot-blue"></span> <div><strong class="text-blue">문제(Problem):</strong> 사용자가 겪는 직접적인 불편함</div></li>
+                    <li><span class="color-dot dot-pink"></span> <div><strong class="text-pink">관찰(Observation):</strong> 현장에서 포착된 구체적인 행동</div></li>
+                    <li><span class="color-dot dot-green"></span> <div><strong class="text-green">인사이트(Insight):</strong> 분석을 통해 도출된 핵심 니즈</div></li>
+                  </ul>
+                </div>
+                
+                <div class="category-box">
+                  <h5 class="legend-title">분류 카테고리</h5>
+                  <p>지식(정보), 대회, 기록, 스케줄, 운영, 연습 현장 등 총 8가지 영역으로 데이터를 구조화하여 패턴을 발견함.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Back Button (Bottom) -->
         <a href="#" class="btn" id="closeLightboxBottom" style="margin-top: var(--spacing-lg); align-self: flex-start; border: none; font-size: 1.05rem; padding-left: 0;">&larr; Back to List</a>
       </div>
+    </div>
+    
+    <!-- Lightbox Modal for Affinity (From Week 3) -->
+    <div class="simple-lightbox" id="simpleLightbox">
+      <span class="simple-lightbox-close" id="simpleLightboxClose">&times;</span>
+      <img src="" alt="Zoomed Diagram" id="simpleLightboxImg" />
     </div>
   </main>
 
@@ -515,6 +647,25 @@
             lightbox.classList.remove('show');
             document.body.style.overflow = '';
           }
+        });
+      }
+
+      // Add Affinity simple lightbox functionality from week3
+      const affinityImg = document.getElementById('affinityImg');
+      const sLightbox = document.getElementById('simpleLightbox');
+      const sLightboxImg = document.getElementById('simpleLightboxImg');
+      const sCloseBtn = document.getElementById('simpleLightboxClose');
+
+      if (affinityImg && sLightbox) {
+        affinityImg.addEventListener('click', () => {
+          sLightboxImg.src = affinityImg.src;
+          sLightbox.classList.add('show');
+        });
+
+        const closeFn = () => sLightbox.classList.remove('show');
+        sCloseBtn.addEventListener('click', closeFn);
+        sLightbox.addEventListener('click', (e) => {
+          if (e.target === sLightbox) closeFn();
         });
       }
     });

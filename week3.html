@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 3 — Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    .detail-container {
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .back-btn {
+      align-self: flex-start;
+      margin-bottom: var(--spacing-lg);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition-fast, 0.2s ease);
+    }
+
+    .back-btn:hover {
+      color: var(--color-text, #000);
+    }
+
+    .detail-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0;
+      border-radius: 0;
+      display: block;
+    }
+
+    .detail-title-wrapper {
+      max-width: 100%;
+      text-align: left;
+      margin-bottom: var(--spacing-lg);
+      width: 100%;
+    }
+
+    .detail-title-wrapper h2 {
+      font-size: 4rem;
+      margin-bottom: var(--spacing-sm);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--color-text);
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="./index.html" class="logo">Jian Choi.</a>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./ux-design.html" class="active">UX Design</a>
+        <a href="./work.html">Work</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container detail-container reveal reveal-immediate">
+      <a href="./ux-design.html" class="back-btn">&larr; Back to List</a>
+      
+      <div class="detail-title-wrapper">
+        <h2>좋은 디자인 & 나쁜 디자인 분석</h2>
+      </div>
+      
+      <!-- User requested images in order -->
+      <img src="https://i.postimg.cc/15Pdp312/Slide-16-9-18.png" alt="Week 4 Slide 18" class="detail-image" />
+      <img src="https://i.postimg.cc/rygHNLyd/Slide-16-9-32.png" alt="Week 4 Slide 32" class="detail-image" />
+      <img src="https://i.postimg.cc/nzFkXCmx/Slide-16-9-19.png" alt="Week 4 Slide 19" class="detail-image" />
+      <img src="https://i.postimg.cc/1tvKws0Z/Slide-16-9-20.png" alt="Week 4 Slide 20" class="detail-image" />
+      <img src="https://i.postimg.cc/NFV7CDPV/Slide_16_9_21.png" alt="Week 4 Slide 21" class="detail-image" />
+      <img src="https://i.postimg.cc/sx14JqKv/Slide_16_9_22.png" alt="Week 4 Slide 22" class="detail-image" />
+      <img src="https://i.postimg.cc/PxvmpYxk/Slide_16_9_33.png" alt="Week 4 Slide 33" class="detail-image" />
+      <img src="https://i.postimg.cc/L6pz5qFb/Slide_16_9_23.png" alt="Week 4 Slide 23" class="detail-image" />
+      <img src="https://i.postimg.cc/nrvBTxBz/Slide_16_9_24.png" alt="Week 4 Slide 24" class="detail-image" />
+      <img src="https://i.postimg.cc/PfZWdW9s/Slide_16_9_25.png" alt="Week 4 Slide 25" class="detail-image" />
+      <img src="https://i.postimg.cc/qqb0Phsr/Slide_16_9_26.png" alt="Week 4 Slide 26" class="detail-image" />
+      <img src="https://i.postimg.cc/T2CRLSZ9/Slide_16_9_27.png" alt="Week 4 Slide 27" class="detail-image" />
+      <img src="https://i.postimg.cc/m2nBV9ZX/Slide_16_9_28.png" alt="Week 4 Slide 28" class="detail-image" />
+      <img src="https://i.postimg.cc/hPYcMm4C/Slide_16_9_29.png" alt="Week 4 Slide 29" class="detail-image" />
+      <img src="https://i.postimg.cc/c1jbbBY0/Slide_16_9_30.png" alt="Week 4 Slide 30" class="detail-image" />
+      <img src="https://i.postimg.cc/GhVqXLWL/Slide_16_9_31.png" alt="Week 4 Slide 31" class="detail-image" />
+      <img src="https://i.postimg.cc/3r6ccFpk/Slide_16_9_15.png" alt="Week 4 Slide 15" class="detail-image" />
+      
+      <a href="./ux-design.html" class="back-btn" style="margin-top: var(--spacing-md);">&larr; Back to List</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/jianarchive" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

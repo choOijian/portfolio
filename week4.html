@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 4 — Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    .detail-container {
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .back-btn {
+      align-self: flex-start;
+      margin-bottom: var(--spacing-lg);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition-fast, 0.2s ease);
+    }
+
+    .back-btn:hover {
+      color: var(--color-text, #000);
+    }
+
+    .detail-title-wrapper {
+      max-width: 100%;
+      text-align: left;
+      margin-bottom: calc(var(--spacing-lg) + 2rem);
+      width: 100%;
+    }
+
+    .detail-title-wrapper h2 {
+      font-size: 4rem;
+      margin-bottom: var(--spacing-sm);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--color-text);
+      word-break: keep-all;
+    }
+
+    /* Section Global */
+    .content-section {
+      width: 100%;
+      margin-bottom: 6rem; /* sufficient padding between sections */
+      text-align: left;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      border-bottom: 2px solid var(--color-text);
+      padding-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Flow Identifier */
+    .section-number {
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--color-text); /* Bold black */
+      background: #f4f4f4;
+      padding: 0.2rem 0.8rem;
+      border-radius: 4px;
+    }
+
+    /* 01. 리서치 */
+    .research-overview { background-color: #f7f7f7; padding: 2.5rem; border-radius: 4px; border: 1px solid #efefef; margin-bottom: 3.5rem; }
+    .w4-info-list { list-style: none; padding-left: 0; margin: 0 0 1.5rem 0; }
+    .w4-info-list li { position: relative; padding-left: 1.4rem; margin-bottom: 0.8rem; font-size: 1.15rem; color: #333; line-height: 1.6; word-break: keep-all; }
+    .w4-info-list li::before { content: '•'; position: absolute; left: 0; color: #aaa; font-size: 1.2rem; }
+    .w4-info-list li strong { font-weight: 700; color: #111; }
+    .overview-desc { font-size: 1.1rem; color: #555; line-height: 1.6; border-top: 1px dashed #ddd; padding-top: 1.5rem; margin: 0; word-break: keep-all; }
+    .research-sub-section { margin-bottom: 3.5rem; }
+    .sub-section-title { font-size: 1.45rem; font-weight: 700; margin-bottom: 1rem; color: #111; display: inline-block; background: #fff; padding-right: 15px; position: relative; z-index: 2; }
+    .sub-section-title-wrapper { position: relative; margin-bottom: 1.5rem; }
+    .sub-section-title-wrapper::after { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 1px; background: #eee; z-index: 1; }
+    .sub-section-desc { font-size: 1.15rem; color: #444; line-height: 1.6; margin-bottom: 2rem; word-break: keep-all; }
+    .image-grid-3x1 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; }
+    .grid-img { width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; object-fit: cover; }
+    .section-divider { border: 0; border-top: 1px solid #eaeaea; margin: 4rem 0; }
+    .interview-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start; }
+    .funnel-container { position: relative; padding-left: 1rem; }
+    .funnel-phase { margin-bottom: 3.5rem; position: relative; }
+    .funnel-phase:last-child { margin-bottom: 0; }
+    .funnel-label { font-size: 0.85rem; font-weight: 700; color: #bbb; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .funnel-label::after { content: ''; height: 1px; flex-grow: 1; background: linear-gradient(to right, #eee, transparent); }
+    .funnel-qa-list { list-style: none; padding: 0; margin: 0; }
+    .funnel-qa-list li { margin-bottom: 2rem; position: relative; padding-left: 1.5rem; }
+    .funnel-qa-list li::before { content: 'Q.'; position: absolute; left: 0; top: 0; font-weight: 900; color: #ddd; font-size: 0.9rem; }
+    .funnel-q { display: block; font-weight: 700; font-size: 1.15rem; color: #111; margin-bottom: 0.6rem; word-break: keep-all; line-height: 1.4; }
+    .funnel-a { font-size: 1.05rem; color: #666; line-height: 1.6; word-break: keep-all; font-weight: 400; padding-left: 0.5rem; border-left: 2px solid #f0f0f0; }
+    .funnel-visual-indicator { position: absolute; left: -2.5rem; top: 0; height: 100%; width: 20px; display: flex; flex-direction: column; align-items: center; opacity: 0.4; }
+    .funnel-v-line { flex-grow: 1; width: 1px; background: #ddd; position: relative; }
+    .funnel-v-line::after { content: '▼'; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%); font-size: 10px; color: #aaa; }
+    
+    .interview-img-wrapper { display: flex; align-items: center; justify-content: center; position: sticky; top: 100px; }
+    .interview-img-wrapper { display: flex; align-items: center; justify-content: center; }
+    .interview-img { width: 100%; height: auto; border-radius: 4px; border: 1px solid #eee; }
+    .zoomable { cursor: zoom-in; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .zoomable:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .zoomable.zoomed { transform: scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: zoom-out; z-index: 10; position: relative; }
+
+    /* 02. 타겟 사용자 및 가치 */
+    .value-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .value-card { background-color: #fdfdfd; border: 1px solid #eaeaea; padding: 4rem 2.5rem; border-radius: 4px; text-align: center; transition: all 0.3s ease; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+    .value-card:hover { border-color: #111; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .value-card h4 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.8rem; color: #111; background-color: #f0f0f0; padding: 0.3rem 1.2rem; border-radius: 30px; }
+    .value-card .main-msg { font-size: 1.5rem; font-weight: 800; color: #111; margin-bottom: 1.5rem; word-break: keep-all; line-height: 1.4; }
+    .value-card .sub-msg { font-size: 1.1rem; color: #666; line-height: 1.6; word-break: keep-all; font-weight: 400; max-width: 90%; }
+
+    @media (max-width: 768px) {
+      .value-cards { grid-template-columns: 1fr; }
+    }
+
+    /* 03. 어피니티 다이어그램 */
+    .affinity-container { display: flex; flex-direction: column; gap: 2.5rem; align-items: center; margin-top: 2rem; width: 100%; }
+    .affinity-img-wrapper { width: 100%; background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 1.5rem; box-sizing: border-box; }
+    .affinity-img { width: 100%; height: auto; border-radius: 2px; cursor: zoom-in; transition: box-shadow 0.3s ease; }
+    .affinity-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; }
+    .legend-item { border-top: 4px solid #eee; padding-top: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+    .legend-item.problem { border-top-color: #3b82f6; }
+    .legend-item.observation { border-top-color: #ec4899; }
+    .legend-item.insight { border-top-color: #22c55e; }
+    .legend-badge { font-weight: 800; font-size: 0.85rem; padding: 0.1rem 0.6rem; border-radius: 2px; margin-bottom: 0.8rem; color: #fff; text-transform: uppercase; }
+    .badge-blue { background-color: #3b82f6; }
+    .badge-pink { background-color: #ec4899; }
+    .badge-green { background-color: #22c55e; }
+    .legend-title { font-size: 1.15rem; font-weight: 700; color: #111; margin-bottom: 0.5rem; word-break: keep-all; }
+    .legend-desc { font-size: 1rem; color: #666; line-height: 1.5; word-break: keep-all; font-weight: 400; }
+    
+    .analysis-summary { background-color: #f7f7f7; padding: 2.5rem; border-radius: 4px; border-left: 5px solid #111; margin-top: 1rem; width: 100%; box-sizing: border-box; }
+    .analysis-summary p { font-size: 1.15rem; color: #222; line-height: 1.7; word-break: keep-all; font-weight: 500; margin: 0; }
+
+    /* Lightbox Modal */
+    .simple-lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.92); z-index: 9999; display: block; overflow: auto; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; scroll-behavior: smooth; }
+    .simple-lightbox.show { opacity: 1; pointer-events: auto; }
+    .simple-lightbox .img-wrapper { min-width: 100%; min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 60px; box-sizing: border-box; }
+    .simple-lightbox img { max-width: none !important; max-height: none !important; width: auto !important; height: auto !important; border-radius: 4px; box-shadow: 0 10px 50px rgba(0,0,0,0.5); image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+    .simple-lightbox-close { position: fixed; top: 20px; right: 30px; color: #fff; font-size: 2.5rem; cursor: pointer; font-weight: 300; z-index: 10000; background: rgba(0,0,0,0.5); width: 60px; height: 60px; line-height: 54px; text-align: center; border-radius: 50%; transition: background 0.2s ease; }
+    .simple-lightbox-close:hover { background: rgba(0,0,0,0.8); }
+
+    /* 04. 코딩 스킴 Table */
+    .coding-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    
+    /* 04. 코딩 스킴 Table (Deprecated and replaced with structural layout) */
+    .coding-scheme-container { display: flex; flex-direction: column; gap: 2rem; align-items: center; }
+    .scheme-img-wrapper { width: 100%; max-width: 1000px; border: 1px solid #eee; border-radius: 4px; padding: 3rem; background: #fff; box-sizing: border-box; cursor: zoom-in; transition: transform 0.2s ease; display: flex; justify-content: center; }
+    .scheme-img-wrapper:hover { transform: translateY(-3px); }
+    .scheme-img { max-width: 100%; width: auto; height: auto; display: block; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+    
+    .coding-legend { display: flex; flex-direction: column; gap: 2rem; background: #fafafa; padding: 3rem; border-radius: 4px; border: 1px solid #efefef; }
+    .coding-legend-row { display: grid; grid-template-columns: 180px 1fr; gap: 2rem; align-items: start; }
+    .coding-legend-row:not(:last-child) { border-bottom: 1px dashed #ddd; padding-bottom: 2rem; }
+    .legend-label { font-weight: 800; font-size: 1.15rem; color: #111; display: flex; align-items: center; gap: 0.8rem; height: 100%; }
+    .legend-label::before { content: ''; width: 5px; height: 20px; background: #111; display: block; border-radius: 2px; }
+    .legend-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .legend-tags span { background: #fff; border: 1px solid #ddd; padding: 0.5rem 1.2rem; border-radius: 4px; font-size: 1rem; color: #333; font-weight: 500; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+
+    .lightbox-trigger { cursor: zoom-in; }
+
+    /* 05. 인사이트 도출 */
+    .insight-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .insight-card {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      padding: 2.5rem 2rem;
+      border-radius: 6px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+      border-color: #111;
+    }
+
+    .insight-num { font-size: 0.85rem; font-weight: 900; color: #ccc; margin-bottom: 0.8rem; letter-spacing: 0.05em; }
+
+    .insight-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+
+    .insight-card p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .interview-layout { grid-template-columns: 1fr; }
+      .image-grid-3x1 { grid-template-columns: 1fr; }
+      .affinity-legend { grid-template-columns: 1fr; }
+      .coding-legend-row { grid-template-columns: 1fr; gap: 1rem; }
+      .coding-table th, .coding-table td { display: block; width: 100%; }
+      .coding-table th { background-color: #f1f1f1; border-bottom: none; }
+      .coding-table td { border-top: none; margin-bottom: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="./index.html" class="logo">Jian Choi.</a>
+      <nav class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./ux-design.html" class="active">UX Design</a>
+        <a href="./work.html">Work</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container detail-container reveal reveal-immediate">
+      <a href="./ux-design.html" class="back-btn">&larr; Back to List</a>
+      
+      <div class="detail-title-wrapper">
+        <h2>리서치를 통한 데이터 분석 및 정보 구조화</h2>
+      </div>
+
+      <!-- 01. 리서치 -->
+      <div class="content-section">
+        <h3 class="section-title"><span class="section-number">01</span> 리서치 (관찰 및 인터뷰)</h3>
+        
+        <!-- [리서치 개요] -->
+        <div class="research-overview">
+          <ul class="w4-info-list">
+            <li><strong>리서치 일시:</strong> 2026년 3월 26일</li>
+            <li><strong>대상:</strong> 경기대학교 농구 동아리 부원 (8명)</li>
+            <li><strong>관찰 상황:</strong> 동아리 정기 훈련, 타 팀(게스트)과의 연습 경기, 전반적인 휴식 시간 및 작전 타임 등</li>
+          </ul>
+          <p class="overview-desc">설명: "사용자의 실제 환경(농구 코트)에서 행동 패턴을 포착하고 페인 포인트(Pain Point)를 심층적으로 분석하기 위해 필드 리서치와 맥락적 인터뷰를 병행했습니다."</p>
+        </div>
+
+        <!-- [섹션 1-1: 필드 리서치] -->
+        <div class="research-sub-section">
+          <div class="sub-section-title-wrapper"><h4 class="sub-section-title">1-1. 필드 리서치 (Field Research)</h4></div>
+
+          <div class="image-grid-3x1">
+            <img src="https://i.postimg.cc/mrjQzWf4/IMG-1266.jpg" alt="Field Research 1" width="718" height="799" fetchpriority="high" decoding="async" class="grid-img zoomable" onclick="this.classList.toggle('zoomed')" />
+            <img src="https://i.postimg.cc/mDx0DnMZ/IMG-1267.jpg" alt="Field Research 2" width="755" height="800" fetchpriority="high" decoding="async" class="grid-img zoomable" onclick="this.classList.toggle('zoomed')" />
+            <img src="https://i.postimg.cc/4N8qtytD/IMG-1268.jpg" alt="Field Research 3" width="766" height="800" fetchpriority="high" decoding="async" class="grid-img zoomable" onclick="this.classList.toggle('zoomed')" />
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- [섹션 1-2: 맥락적 인터뷰] -->
+        <div class="research-sub-section">
+          <div class="sub-section-title-wrapper"><h4 class="sub-section-title">1-2. 맥락적 인터뷰 (Contextual Inquiry)</h4></div>
+          
+          <div class="interview-layout">
+            <div class="funnel-container">
+              <!-- Funnel Vertical Indicator -->
+              <div class="funnel-visual-indicator">
+                <div class="funnel-v-line"></div>
+                <div class="funnel-v-line"></div>
+                <div class="funnel-v-line"></div>
+              </div>
+
+              <!-- Phase 1: Intro -->
+              <div class="funnel-phase">
+                <span class="funnel-label">01. Intro — 일상 및 활동 전반 (포괄적 질문)</span>
+                <ul class="funnel-qa-list">
+                  <li>
+                    <span class="funnel-q">동아리 활동 중 가장 힘들거나 행복한 순간은?</span>
+                    <div class="funnel-a">키워드: 성취감, 팀원들의 격려, 만족도 9~10점</div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Phase 2: Body -->
+              <div class="funnel-phase">
+                <span class="funnel-label">02. Body — 구체적 페인포인트 (좁혀지는 질문)</span>
+                <ul class="funnel-qa-list">
+                  <li>
+                    <span class="funnel-q">현재의 공지 및 소통 방식(카톡)에 만족하시나요?</span>
+                    <div class="funnel-a">키워드: 정보 휘발성, 대화에 묻히는 공지, 효율성 저하</div>
+                  </li>
+                  <li>
+                    <span class="funnel-q">동아리 운영 시 가장 큰 목표와 장애물은?</span>
+                    <div class="funnel-a">키워드: 교류전 개최 희망, 그러나 심판 고용 및 기록 관리의 복잡함</div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Phase 3: Conclusion -->
+              <div class="funnel-phase">
+                <span class="funnel-label">03. Conclusion — 서비스 제안 및 니즈 (가장 좁은 질문)</span>
+                <ul class="funnel-qa-list">
+                  <li>
+                    <span class="funnel-q">체육관 예약 및 팀 매칭 서비스가 있다면?</span>
+                    <div class="funnel-a">키워드: 실내 코트 필수, 기존 예약 시스템의 불편함, 전용 서비스 희망</div>
+                  </li>
+                  <li>
+                    <span class="funnel-q">경기 영상 기록의 필요성에 대해?</span>
+                    <div class="funnel-a">키워드: 실력 객관화, 동기부여, 부원들과의 추억 공유</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="interview-img-wrapper">
+              <img src="https://i.postimg.cc/hjWtBptH/Gemini-Generated-Image-oah4qvoah4qvoah4.png" alt="Contextual Interview" width="1280" height="794" loading="lazy" decoding="async" class="zoomable interview-img" onclick="this.classList.toggle('zoomed')" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02. 타겟 사용자 및 가치 -->
+      <div class="content-section">
+        <h3 class="section-title"><span class="section-number">02</span> 타겟 사용자 및 궁극적 가치 설정</h3>
+        <div class="value-cards">
+          <!-- Card 1: Target User -->
+          <div class="value-card">
+            <h4>Target User</h4>
+            <p class="main-msg">"정기적인 모임 가입 없이도 단체 운동을 즐기고 싶은 사람들"</p>
+            <p class="sub-msg">소속감에 대한 부담은 덜고, 원할 때 언제든 농구와 같은 단체 스포츠를 즐기고자 하는 액티브한 사용자층을 타겟으로 함.</p>
+          </div>
+          
+          <!-- Card 2: Core Value -->
+          <div class="value-card">
+            <h4>Core Value</h4>
+            <p class="main-msg">"공간 대여와 운동 모임 개설의 동시 해결"</p>
+            <p class="sub-msg">정기적인 모임에 가입하지 않아도, 단체 운동이 가능한 '공간 대여'와 함께 뛸 '동료 모집(모임 개설)'을 한 번에 가능하게 하여 운동의 진입 장벽을 낮추는 가치를 제공함.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03. 어피니티 다이어그램 -->
+      <div class="content-section">
+        <h3 class="section-title"><span class="section-number">03</span> 포스트잇 정리 (Affinity Diagram)</h3>
+        
+        <div class="affinity-container">
+          <!-- Main Image Component -->
+          <div class="affinity-img-wrapper" id="affinityTrigger">
+            <img src="https://i.postimg.cc/Y2Tp4cPG/seukeulinsyas-2026-03-27-ohu-6-24-01.png" alt="Affinity Diagram Board" width="1280" height="494" loading="lazy" decoding="async" class="affinity-img" />
+          </div>
+
+          <!-- Legend (Infographic Style) -->
+          <div class="affinity-legend">
+            <!-- Problem Card -->
+            <div class="legend-item problem">
+              <span class="legend-badge badge-blue">Problem</span>
+              <h5 class="legend-title">문제(Problem): 사용자가 겪는 직접적인 불편함</h5>
+              <p class="legend-desc">예: 코트 예약의 어려움, 팀원 모집의 번거로움</p>
+            </div>
+            <!-- Observation Card -->
+            <div class="legend-item observation">
+              <span class="legend-badge badge-pink">Observation</span>
+              <h5 class="legend-title">관찰(Observation): 현장 포착 행동</h5>
+              <p class="legend-desc">예: 카톡 공지를 놓치는 부원들</p>
+            </div>
+            <!-- Insight Card -->
+            <div class="legend-item insight">
+              <span class="legend-badge badge-green">Insight</span>
+              <h5 class="legend-title">인사이트(Insight): 분석 기반 핵심 니즈</h5>
+              <p class="legend-desc">예: 실시간 예약 시스템, 휘발되지 않는 팀 소통 통로</p>
+            </div>
+          </div>
+
+          <!-- Analysis Result Summary -->
+          <div class="analysis-summary">
+            <p>"수집된 80여 개의 로우 데이터를 유사성에 따라 그룹화한 결과, 크게 '운영 효율화', '참여 동기부여', '정보 접근성'이라는 3가지 핵심 클러스터를 발견했습니다."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04. 코딩 스킴 -->
+      <div class="content-section">
+        <h3 class="section-title"><span class="section-number">04</span> 코딩 스킴 (Coding Scheme)</h3>
+        <p class="sub-section-desc" style="margin-bottom: 2.5rem;">"수집된 대량의 인터뷰 및 관찰 데이터를 체계적으로 분석하기 위해, 3개의 상위 카테고리와 5개의 하위 카테고리로 구성된 '코딩 스킴(분류 틀)'을 설계했습니다. 이를 통해 로우 데이터(Raw Data)를 논리적으로 구조화하여 핵심 인사이트를 도출하는 기반을 마련했습니다."</p>
+        
+        <div class="coding-scheme-container">
+          <!-- Structural Diagram Image -->
+          <div class="scheme-img-wrapper lightbox-trigger">
+            <img src="https://i.postimg.cc/ZRvGHSPJ/seukeulinsyas-2026-03-30-ohu-5-27-02.png" alt="Coding Scheme Structure" width="430" height="800" loading="lazy" decoding="async" class="scheme-img" />
+          </div>
+
+          <!-- Taxonomy Legend / Summary -->
+          <div class="coding-legend">
+            <!-- L1 Higher Level -->
+            <div class="coding-legend-row">
+              <div class="legend-label">L1 (상위)</div>
+              <div class="legend-tags">
+                <span>서비스 이용 환경</span>
+                <span>일정 관리</span>
+                <span>상호작용</span>
+              </div>
+            </div>
+            <!-- L2 Lower Level -->
+            <div class="coding-legend-row">
+              <div class="legend-label">L2 (하위)</div>
+              <div class="legend-tags">
+                <span>이용 절차</span>
+                <span>정보 정리</span>
+                <span>사용 피로도</span>
+                <span>소통과 반응</span>
+                <span>사용자 역량</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05. 인사이트 도출 -->
+      <!-- 05. 인사이트 도출 -->
+      <div class="content-section" style="margin-bottom: 2rem;">
+        <h3 class="section-title"><span class="section-number">05</span> 인사이트 도출</h3>
+        <div class="insight-cards">
+          <!-- Card 1 -->
+          <div class="insight-card">
+            <span class="insight-num">INSIGHT 01</span>
+            <h4>비정기 모임의 장벽 완화</h4>
+            <p>사용자들은 정기적인 소속감보다는 '원할 때 즉각적으로' 운동할 수 있는 환경을 선호함. 공간 예약과 인원 모집을 한 프로세스로 결합하여 심리적/물리적 진입 장벽을 낮추어야 함.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="insight-card">
+            <span class="insight-num">INSIGHT 02</span>
+            <h4>휘발되지 않는 정보 구조화</h4>
+            <p>카카오톡 등 기존 채널의 정보 휘발성을 해결하기 위해, 경기 기록/공지/팀 매칭 현황을 아카이빙할 수 있는 전용 대시보드가 필요함.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="insight-card">
+            <span class="insight-num">INSIGHT 03</span>
+            <h4>데이터 기반의 성취감 제공</h4>
+            <p>단순한 운동을 넘어 개인의 경기 영상이나 기록을 데이터화하여 시각적으로 보여줌으로써, 지속적인 참여 동기를 부여하고 실력 향상의 지표를 제공해야 함.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- Lightbox Modal for Affinity -->
+    <div class="simple-lightbox" id="simpleLightbox">
+      <span class="simple-lightbox-close" id="simpleLightboxClose">&times;</span>
+      <div class="img-wrapper">
+        <img src="" alt="Zoomed Board" id="simpleLightboxImg" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/jianarchive" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const lightbox = document.getElementById('simpleLightbox');
+      const lightboxImg = document.getElementById('simpleLightboxImg');
+      const closeBtn = document.getElementById('simpleLightboxClose');
+      const triggers = document.querySelectorAll('.lightbox-trigger, #affinityTrigger');
+
+      if (triggers.length > 0 && lightbox) {
+        triggers.forEach(trigger => {
+          trigger.addEventListener('click', () => {
+            const innerImg = trigger.querySelector('img');
+            if (innerImg) {
+              lightboxImg.src = innerImg.src;
+              lightbox.classList.add('show');
+              document.body.style.overflow = 'hidden';
+              // Scroll to center/top of the image when opening
+              lightbox.scrollTo(0, 0);
+            }
+          });
+        });
+
+        const closeFn = () => {
+          lightbox.classList.remove('show');
+          document.body.style.overflow = '';
+        };
+        closeBtn.addEventListener('click', closeFn);
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeFn();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
