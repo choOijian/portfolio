@@ -180,42 +180,107 @@
     .lightbox-trigger { cursor: zoom-in; }
 
     /* 05. 인사이트 도출 */
-    .insight-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+    .design-challenge-box {
+      width: 100%;
+      background-color: #111;
+      color: #fff;
+      padding: 4rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+    }
+    .design-challenge-box h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      margin-bottom: 1.2rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .design-challenge-box p {
+      font-size: 2.4rem;
+      font-weight: 800;
+      word-break: keep-all;
+      line-height: 1.4;
+      margin: 0;
+      letter-spacing: -0.01em;
     }
 
-    .insight-card {
-      background: #fff;
-      border: 1px solid #eaeaea;
-      padding: 2.5rem 2rem;
-      border-radius: 6px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    .theme-container {
       display: flex;
       flex-direction: column;
-      text-align: left;
+      gap: 4rem;
     }
 
-    .insight-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-      border-color: #111;
+    .theme-block {
+      padding-bottom: 1rem;
     }
 
-    .insight-num { font-size: 0.85rem; font-weight: 900; color: #ccc; margin-bottom: 0.8rem; letter-spacing: 0.05em; }
+    .theme-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
 
-    .insight-card h4 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
+    .theme-tag {
+      font-size: 0.85rem;
+      font-weight: 800;
+      background: #000;
+      color: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .theme-title {
+      font-size: 1.6rem;
+      font-weight: 800;
       color: #111;
+      margin: 0;
     }
 
-    .insight-card p {
-      font-size: 1.05rem;
-      color: #555;
-      line-height: 1.6;
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .insight-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .insight-item .bullet {
+      width: 24px;
+      height: 2px;
+      background: #ddd;
+      margin-bottom: 0.2rem;
+    }
+
+    .insight-text {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.7;
+      margin: 0;
+      word-break: keep-all;
+    }
+
+    .insight-text strong {
+      color: #000;
+      font-weight: 700;
+      border-bottom: 1px solid #eee;
+    }
+
+    @media (max-width: 900px) {
+      .insight-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .design-challenge-box p { font-size: 1.8rem; }
     }
 
     @media (max-width: 768px) {
@@ -438,27 +503,80 @@
       </div>
 
       <!-- 05. 인사이트 도출 -->
-      <!-- 05. 인사이트 도출 -->
-      <div class="content-section" style="margin-bottom: 2rem;">
+      <div class="content-section" style="margin-bottom: 6rem;">
         <h3 class="section-title"><span class="section-number">05</span> 인사이트 도출</h3>
-        <div class="insight-cards">
-          <!-- Card 1 -->
-          <div class="insight-card">
-            <span class="insight-num">INSIGHT 01</span>
-            <h4>비정기 모임의 장벽 완화</h4>
-            <p>사용자들은 정기적인 소속감보다는 '원할 때 즉각적으로' 운동할 수 있는 환경을 선호함. 공간 예약과 인원 모집을 한 프로세스로 결합하여 심리적/물리적 진입 장벽을 낮추어야 함.</p>
+        
+        <!-- Design Challenge -->
+        <div class="design-challenge-box">
+          <h4>Design Challenge</h4>
+          <p>개인이 쉽고 부담 없이 팀 스포츠를 즐길 수 있게 하는 것</p>
+        </div>
+
+        <div class="theme-container">
+          <!-- Theme 1 -->
+          <div class="theme-block">
+            <div class="theme-header">
+              <span class="theme-tag">Theme 1</span>
+              <h4 class="theme-title">서비스 이용환경의 불완전성</h4>
+            </div>
+            <div class="insight-grid">
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>복잡한 이용절차</strong>: 공간 예약, 인원 모집 등 준비 과정의 번거로움</p>
+              </div>
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>한정적인 공간</strong>: 시설 부족으로 장소 확보에 과도한 에너지 소모</p>
+              </div>
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>파편화된 정보</strong>: 대관 정보 및 참여 여부 불확실성에 따른 심리적 부담</p>
+              </div>
+            </div>
           </div>
-          <!-- Card 2 -->
-          <div class="insight-card">
-            <span class="insight-num">INSIGHT 02</span>
-            <h4>휘발되지 않는 정보 구조화</h4>
-            <p>카카오톡 등 기존 채널의 정보 휘발성을 해결하기 위해, 경기 기록/공지/팀 매칭 현황을 아카이빙할 수 있는 전용 대시보드가 필요함.</p>
+
+          <!-- Theme 2 -->
+          <div class="theme-block">
+            <div class="theme-header">
+              <span class="theme-tag">Theme 2</span>
+              <h4 class="theme-title">일정관리로 인한 피로</h4>
+            </div>
+            <div class="insight-grid">
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>사용 피로도</strong>: 여러 앱(카톡, 노션 등)을 오가며 인원 파악/날짜 조율의 번거로움</p>
+              </div>
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>실시간성 부재</strong>: 정보 업데이트 속도가 느려 사용자 간 정보 격차 발생</p>
+              </div>
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>비효율적 일정 관리</strong>: 파편화된 정보 수집을 위한 반복적 앱 탐색 에너지 낭비</p>
+              </div>
+            </div>
           </div>
-          <!-- Card 3 -->
-          <div class="insight-card">
-            <span class="insight-num">INSIGHT 03</span>
-            <h4>데이터 기반의 성취감 제공</h4>
-            <p>단순한 운동을 넘어 개인의 경기 영상이나 기록을 데이터화하여 시각적으로 보여줌으로써, 지속적인 참여 동기를 부여하고 실력 향상의 지표를 제공해야 함.</p>
+
+          <!-- Theme 3 -->
+          <div class="theme-block">
+            <div class="theme-header">
+              <span class="theme-tag">Theme 3</span>
+              <h4 class="theme-title">상호작용에 따른 개인역량</h4>
+            </div>
+            <div class="insight-grid">
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>훈련 참여 저조</strong>: 복잡한 절차와 정보 파편화로 인한 인지적 피로가 참여 횟수 급감으로 이어짐</p>
+              </div>
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>성취감 하락</strong>: 참여 횟수 감소에 따른 실력 향상 정체 및 운동 지속 동기 약화</p>
+              </div>
+              <div class="insight-item">
+                <div class="bullet"></div>
+                <p class="insight-text"><strong>정기 활동 유지 능력 저하</strong>: 비효율적 환경 반복으로 정기적인 운동 습관 형성 부재</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
