@@ -1,163 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jian Choi - Visual & Video Designer</title>
-  
-  <!-- Pretendard Font -->
+  <title>Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Pretendard', 'Inter', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              black: '#000000',
-              gray: '#999999',
-              lightGray: '#F5F5F5'
-            }
-          }
-        }
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Home Page specific styles */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: var(--spacing-xl);
+    }
+
+    .hero h1 {
+      font-size: clamp(5rem, 12vw, 10rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .hero p {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .intro-paragraph {
+      margin-top: 1rem;
+    }
+
+    .about-preview {
+      padding: var(--spacing-xl) 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .about-text h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      max-width: 600px;
+    }
+
+    .about-text p:last-of-type {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--color-text);
+      padding-bottom: 4px;
+    }
+
+    .btn:hover {
+      border-bottom-color: transparent;
+    }
+
+    .showreel-section {
+      padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .showreel-video {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16/9;
+      background-color: #eee;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .about-preview {
+        grid-template-columns: 1fr;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
       }
     }
-  </script>
+  </style>
 </head>
-<body class="bg-white text-brand-black font-sans min-h-screen flex flex-col antialiased selection:bg-brand-black selection:text-white">
 
-  <!-- Header -->
-  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent">
-    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight">Jian Choi.</a>
-    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium">
-      <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
-      <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
-      <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
-    </nav>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="./index.html" class="logo">Jian Choi.</a>
+      <nav class="nav-links">
+        <a href="./index.html" class="active">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./ux-design.html">UX Design</a>
+        <a href="./work.html">Work</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="flex-grow flex flex-col items-center px-6 md:px-16 pb-12 md:pb-24">
+  <main>
     <!-- Hero Section -->
-    <section class="w-full max-w-6xl flex flex-col justify-center items-center text-center pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24">
-      <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tighter leading-none mb-3 md:mb-5 text-[#000000]">
-        Hi, I'm Jian.
-      </h1>
-      <p class="text-xl md:text-3xl lg:text-4xl font-normal text-[#2d3748] tracking-tight">
-        I'm a Visual & Video Designer.
-      </p>
+    <section class="container hero">
+      <h1 class="reveal reveal-immediate">CHOI JIAN</h1>
     </section>
 
-    <!-- Showreel Placeholder -->
-    <section class="w-full max-w-6xl">
-      <a href="https://youtu.be/Kgws0H7zJ1g" target="_blank" rel="noopener noreferrer" class="w-full aspect-video md:aspect-[21/9] bg-brand-lightGray rounded-xl md:rounded-3xl flex items-center justify-center cursor-pointer hover:bg-[#EAEAEA] transition-colors duration-500 group block">
-        <span class="text-brand-gray font-bold tracking-widest text-sm md:text-xl lg:text-2xl group-hover:text-brand-black transition-colors duration-500 text-center px-4">
-          CLICK TO WATCH SHOWREEL
-        </span>
-      </a>
+    <!-- Showreel Video -->
+    <section class="container showreel-section reveal" style="transition-delay: 0.1s;">
+      <video class="showreel-video" controls muted playsinline poster="">
+        <source src="assets/video/showreel.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </section>
 
-    <!-- Work Section -->
-    <section id="work-section" class="w-full max-w-6xl flex flex-col pt-24 md:pt-36">
-      
-      <!-- Filter Bar -->
-      <div class="flex gap-6 md:gap-10 mb-10 md:mb-16 border-b border-gray-200 pb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
-        <button class="filter-btn text-lg md:text-xl font-bold text-brand-black" data-filter="all">All</button>
-        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="film">Film</button>
-        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="motion">Motion</button>
-        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="branding">Branding</button>
-        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="etc">Etc</button>
-      </div>
-
-      <!-- Project Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16" id="project-grid">
-        <!-- Project 1: Film -->
-        <a href="#" class="project-card group" data-category="film">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
-            <img src="https://i.postimg.cc/JzjKKs3d/seukeulinsyas-2026-03-09-ohu-4-20-10.png" alt="단편영화 'Epoche'" class="w-full h-full object-cover">
-          </div>
-          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Film]</div>
-          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">단편영화 'Epoche'</h3>
-        </a>
-
-        <!-- Project 2: Film -->
-        <a href="#" class="project-card group" data-category="film">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
-            <img src="https://i.postimg.cc/9My7H90j/seukeulinsyas-2026-03-09-ohu-9-52-53-bogsabon.png" alt="칸쵸 광고 (학생 작업)" class="w-full h-full object-cover">
-          </div>
-          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Film]</div>
-          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">칸쵸 광고 (학생 작업)</h3>
-        </a>
-
-        <!-- Project 3: Motion -->
-        <a href="#" class="project-card group" data-category="motion">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
-            <!-- Placeholder -->
-          </div>
-          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Motion]</div>
-          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">The Last Piece Day</h3>
-        </a>
-
-        <!-- Project 4: Branding -->
-        <a href="#" class="project-card group" data-category="branding">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
-            <img src="https://i.postimg.cc/sxyKksjd/websaiteu-mog-eob.png" alt="Mumchit: Perfume Rebranding" class="w-full h-full object-cover">
-          </div>
-          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Branding]</div>
-          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">Mumchit: Perfume Rebranding</h3>
-        </a>
-
-        <!-- Project 5: Etc -->
-        <a href="#" class="project-card group" data-category="etc">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
-            <!-- Placeholder -->
-          </div>
-          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Etc]</div>
-          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">PROJECT : 보이지 않게 설계된 일상</h3>
-        </a>
+    <!-- About Preview -->
+    <section class="container about-preview reveal" style="transition-delay: 0.2s;">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <a href="./about.html" class="btn">Learn more</a>
       </div>
     </section>
   </main>
 
-  <!-- Filter Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const projectCards = document.querySelectorAll('.project-card');
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/jianarchive" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Reset styles
-          filterBtns.forEach(b => {
-            b.classList.remove('font-bold', 'text-brand-black');
-            b.classList.add('font-normal', 'text-brand-gray');
-          });
-          // Set active styles
-          btn.classList.remove('font-normal', 'text-brand-gray');
-          btn.classList.add('font-bold', 'text-brand-black');
-
-          // Filter logic
-          const filterValue = btn.getAttribute('data-filter');
-          projectCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-              card.style.display = 'block';
-              setTimeout(() => card.style.opacity = '1', 50);
-            } else {
-              card.style.opacity = '0';
-              setTimeout(() => card.style.display = 'none', 300);
-            }
-          });
-        });
-      });
-    });
-  </script>
-
+  <script src="./main.js"></script>
 </body>
+
 </html>
