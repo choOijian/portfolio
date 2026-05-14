@@ -8,6 +8,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <link rel="stylesheet" href="./style.css" />
+  <!-- Tailwind CSS CDN & Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
+          colors: { brand: { black: '#000000', gray: '#999999', lightGray: '#F5F5F5' } }
+        }
+      }
+    }
+  </script>
   <style>
     .detail-container {
       padding-top: calc(var(--spacing-xl) + 60px);
@@ -296,17 +308,14 @@
 </head>
 <body>
 
-  <header class="header">
-    <div class="container nav">
-      <a href="./index.html" class="logo">Jian Choi.</a>
-      <nav class="nav-links">
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./ux-design.html" class="active">UX Design</a>
-        <a href="./work.html">Work</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
-    </div>
+  <!-- Header -->
+  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent z-50">
+    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-[#000000]">Jian Choi.</a>
+    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium text-[#000000]">
+      <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
+      <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
+      <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
+    </nav>
   </header>
 
   <main>
@@ -595,7 +604,7 @@
     <div class="container">
       <div class="footer-links">
         <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
-        <a href="https://instagram.com/jianarchive" target="_blank">Instagram</a>
+        <a href="https://instagram.com/archivejian_" target="_blank">Instagram</a>
       </div>
       <p>© 2024 Jian Choi. All rights reserved.</p>
     </div>
