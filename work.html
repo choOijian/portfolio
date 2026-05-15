@@ -4,492 +4,241 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work — Jian Choi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Pretendard Font -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  <link rel="stylesheet" href="./style.css" />
-  <!-- Tailwind CSS CDN & Config -->
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
-          colors: { brand: { black: '#000000', gray: '#999999', lightGray: '#F5F5F5' } }
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              black: '#000000',
+              gray: '#999999',
+              lightGray: '#F5F5F5'
+            }
+          }
         }
       }
     }
   </script>
-  <style>
-    .work-page {
-      padding-top: calc(var(--spacing-xl) + 60px);
-      padding-bottom: var(--spacing-xl);
-    }
-
-    .page-header {
-      margin-bottom: var(--spacing-xl);
-      text-align: center;
-    }
-
-    .page-header h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 400;
-      letter-spacing: -0.04em;
-      margin-bottom: var(--spacing-md);
-    }
-
-    .filter-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      background: none;
-      border: none;
-      font-size: 1rem;
-      font-family: inherit;
-      color: var(--color-text-muted);
-      cursor: pointer;
-      padding: 8px 16px;
-      border-radius: 30px;
-      transition: color var(--transition-fast), background var(--transition-fast);
-    }
-
-    .filter-btn:hover {
-      color: var(--color-text);
-      background: rgba(0,0,0,0.05);
-    }
-
-    .filter-btn.active {
-      color: var(--color-bg);
-      background: var(--color-text);
-    }
-
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-lg);
-    }
-
-    .work-card {
-      display: block;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .work-card.hide {
-      display: none;
-    }
-
-    .work-image-wrapper {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 16/9;
-      margin-bottom: var(--spacing-sm);
-      border-radius: 4px;
-    }
-
-    .work-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform var(--transition-smooth);
-    }
-
-    .work-card:hover .work-image-wrapper img {
-      transform: scale(1.03);
-    }
-
-    .work-title {
-      font-size: 1.25rem;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .work-category {
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      margin-bottom: 4px;
-    }
-    
-    .work-desc {
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      font-weight: 300;
-    }
-
-    .category-section {
-      margin-bottom: var(--spacing-xl);
-    }
-    
-    .category-title {
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: var(--spacing-md);
-      letter-spacing: -0.02em;
-    }
-
-    .works-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--spacing-lg);
-    }
-
-    .work-card {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-      transition: opacity var(--transition-fast), transform var(--transition-fast);
-    }
-
-    .work-image-wrapper.ratio-natural {
-      aspect-ratio: auto;
-    }
-    
-    .work-image-wrapper.ratio-natural img {
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .work-image-wrapper.ratio-square {
-      aspect-ratio: 1/1;
-    }
-
-    .work-image-wrapper.ratio-square img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .mockup-zoom img {
-      transform: scale(1.3);
-      transform-origin: center top;
-      object-position: center top;
-    }
-
-    .work-card:hover .mockup-zoom img {
-      transform: scale(1.35);
-    }
-
-    .hover-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity var(--transition-fast);
-      z-index: 2;
-    }
-
-    .hover-btn {
-      padding: 12px 24px;
-      background: #fff;
-      color: #000;
-      border-radius: 30px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transform: translateY(10px);
-      transition: transform var(--transition-smooth);
-    }
-
-    .work-card:hover .hover-overlay {
-      opacity: 1;
-    }
-
-    .work-card:hover .hover-btn {
-      transform: translateY(0);
-    }
-
-    /* Lightbox Styles */
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(255, 255, 255, 0.98);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--transition-fast);
-      overflow-y: auto;
-      padding: var(--spacing-md);
-    }
-
-    .lightbox.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-      z-index: 1001;
-    }
-
-    .lightbox-close:hover {
-      color: var(--color-text);
-    }
-
-    .lightbox-content {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 6rem;
-      padding-bottom: 4rem;
-    }
-
-    .lightbox-title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: var(--spacing-xl);
-      text-align: center;
-      width: 100%;
-    }
-
-    .lightbox-image {
-      width: 100%;
-      margin-bottom: var(--spacing-xl);
-      background-color: transparent;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 1024px) {
-      .works-grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .works-grid, .works-grid-3 {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
-<body>
-  
+<body class="bg-white text-brand-black font-sans min-h-screen flex flex-col antialiased selection:bg-brand-black selection:text-white">
+
   <!-- Header -->
-  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent z-50">
-    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-[#000000]">Jian Choi.</a>
-    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium text-[#000000]">
+  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent">
+    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight">Jian Choi.</a>
+    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium">
       <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
       <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
       <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="container work-page">
-      <div class="page-header reveal reveal-immediate">
-        <h1>Work</h1>
+  <!-- Main Content -->
+  <main class="flex-grow flex flex-col items-center px-6 md:px-16 pb-12 md:pb-24">
+    
+    <!-- Work Section -->
+    <section id="work-section" class="w-full max-w-6xl flex flex-col pt-12 md:pt-20">
+      
+      <div class="mb-12 md:mb-20">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4">Work</h1>
+        <p class="text-lg md:text-xl text-brand-gray">Selected projects and experiments.</p>
       </div>
 
-      <!-- Film Category -->
-      <div class="category-section">
-        <h2 class="category-title reveal">Film</h2>
-        <div class="works-grid">
-          <a href="#" class="work-card reveal" style="transition-delay: 0.1s;">
-            <div class="work-image-wrapper">
-              <img src="https://i.postimg.cc/JzjKKs3d/seukeulinsyas-2026-03-09-ohu-4-20-10.png" alt="단편영화 'epoche'">
-            </div>
-            <h3 class="work-title">단편영화 'epoche'</h3>
-          </a>
-          
-          <a href="#" class="work-card reveal" style="transition-delay: 0.2s;">
-            <div class="work-image-wrapper">
-              <img src="https://i.postimg.cc/cHCRqCYg/seukeulinsyas-2026-03-09-ohu-9-58-22.png" alt="epoche 메이킹 필름">
-            </div>
-            <h3 class="work-title">'epoche' 메이킹 필름</h3>
-          </a>
-
-          <a href="#" class="work-card reveal" style="transition-delay: 0.3s;">
-            <div class="work-image-wrapper">
-              <img src="https://i.postimg.cc/9My7H90j/seukeulinsyas-2026-03-09-ohu-9-52-53-bogsabon.png" alt="칸쵸 광고 필름">
-            </div>
-            <h3 class="work-title">칸쵸 광고 필름</h3>
-          </a>
-        </div>
+      <!-- Filter Bar -->
+      <div class="flex gap-6 md:gap-10 mb-10 md:mb-16 border-b border-gray-200 pb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <button class="filter-btn text-lg md:text-xl font-bold text-brand-black" data-filter="all">All</button>
+        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="film">Film</button>
+        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="ai">AI</button>
+        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="motion">Motion</button>
+        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="branding">Branding</button>
+        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="etc">Etc</button>
       </div>
 
-      <!-- Motion Category -->
-      <div class="category-section">
-        <h2 class="category-title reveal">Motion</h2>
-        <div class="works-grid">
-          <a href="#" class="work-card reveal" style="transition-delay: 0.1s;">
-            <div class="work-image-wrapper ratio-natural">
-              <img src="https://i.postimg.cc/25Qkz7Qx/3bunban-choejian-sseomneil.jpg" alt="To those who forgot how to see">
+      <!-- Project Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16" id="project-grid">
+        
+        <!-- Project 1: Film (Epoche) -->
+        <a href="https://youtu.be/U30gvPBCfpo" target="_blank" rel="noopener noreferrer" class="project-card group flex flex-col" data-category="film">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/JzjKKs3d/seukeulinsyas-2026-03-09-ohu-4-20-10.png" alt="단편영화 'Epoche'" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
             </div>
-            <h3 class="work-title">To those who forgot how to see</h3>
-          </a>
+          </div>
+          <div class="text-gray-400 text-sm">Sep 2025 - Dec 2025</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">에포케 (Epoché)</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">3명의 시나리오를 하나의 현상학적 담론으로 엮어낸 옴니버스 단편</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Omnibus Film</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Production Design</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Direction</span>
+          </div>
+        </a>
 
-          <a href="#" class="work-card reveal" style="transition-delay: 0.2s;">
-            <div class="work-image-wrapper ratio-natural">
-              <img src="https://i.postimg.cc/bwQcbNZ9/seukeulinsyas-2026-03-09-ohu-10-34-56.png" alt="달려라 산타씨!">
+        <!-- Project 2: Film (칸쵸 광고) -->
+        <a href="#" class="project-card group flex flex-col" data-category="film">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/9My7H90j/seukeulinsyas-2026-03-09-ohu-9-52-53-bogsabon.png" alt="칸쵸 광고" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">View Project</span>
             </div>
-            <h3 class="work-title">달려라 산타씨!</h3>
-          </a>
-        </div>
-      </div>
+          </div>
+          <div class="text-gray-400 text-sm">2025</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">칸쵸 광고</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">칸쵸 브랜드를 위한 기획 및 광고 영상 제작 프로젝트.</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Film</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Ad</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Production Design</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Direction</span>
+          </div>
+        </a>
 
-      <!-- Design Category -->
-      <div class="category-section">
-        <h2 class="category-title reveal">Design</h2>
-        <div class="works-grid works-grid-3">
-          <a href="#" class="work-card reveal" style="transition-delay: 0.1s;">
-            <div class="work-image-wrapper ratio-square">
-              <img src="https://i.postimg.cc/QxchgqPX/peekey-mobailhwamyeonmog-eob.png" alt="peekey">
+        <!-- Project 3: AI (The Last Piece Day) -->
+        <a href="https://youtu.be/syqYr1-kX_4" target="_blank" rel="noopener noreferrer" class="project-card group flex flex-col" data-category="ai">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/k5ZB0Xsy/meogneunkeos.png" alt="The Last Piece Day" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
             </div>
-            <h3 class="work-title">peekey</h3>
-          </a>
+          </div>
+          <div class="uppercase text-[10px] text-gray-400 tracking-wider mb-1">Personal Project</div>
+          <div class="text-gray-400 text-sm">Mar 2026 - Present</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">The Last Piece Day</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">마지막 한 조각을 먹을 때 느끼는 사회적 심리를 시각화한 모션 그래픽 캠페인. 가상의 기념일을 만들어 AI 영상 제작 / 개인 프로젝트</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">AI</span>
+          </div>
+        </a>
 
-          <a href="#" class="work-card reveal" style="transition-delay: 0.2s;">
-            <div class="work-image-wrapper ratio-square mockup-zoom">
-              <img src="https://i.postimg.cc/sxyKksjd/websaiteu-mog-eob.png" alt="멈칫 리브랜딩">
+        <!-- Project 3.5: AI (본죽 AI 광고) -->
+        <a href="https://youtu.be/6zB1FerEbzk" target="_blank" rel="noopener noreferrer" class="project-card group flex flex-col" data-category="ai">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/fb6RHqTN/saenaegichoejong.png" alt="본죽 AI 광고" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
             </div>
-            <h3 class="work-title">멈칫 리브랜딩</h3>
-          </a>
-        </div>
-      </div>
+          </div>
+          <div class="text-gray-400 text-sm">2026</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">본죽 AI 광고</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">생성형 AI 기술을 활용하여 제작한 본죽 브랜드 광고 영상.</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">AI</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Ad</span>
+          </div>
+        </a>
 
-      <!-- Poster Design Collection (Merged without title) -->
-      <div class="category-section" style="margin-top: calc(var(--spacing-xl) * -0.5);">
-        <div class="works-grid">
-          <a href="#" class="work-card reveal" style="transition-delay: 0.1s;">
-            <div class="work-image-wrapper ratio-natural" style="display: flex; flex-direction: column; gap: 8px; background: none;">
-              <img src="https://i.postimg.cc/vTtMyY5v/스크린샷_2026_03_09_오후_10_50_54.png" alt="영화 epoche 포스터 1">
-              <img src="https://i.postimg.cc/8kRTMHxp/스크린샷_2026_03_09_오후_10_50_34.png" alt="영화 epoche 포스터 2">
+        <!-- Project 3.7: Motion (To those who forgot how to see) -->
+        <a href="https://youtu.be/x88o8c6MgQM" target="_blank" rel="noopener noreferrer" class="project-card group flex flex-col" data-category="motion">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/25Qkz7Qx/3bunban-choejian-sseomneil.jpg" alt="To those who forgot how to see" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
             </div>
-            <h3 class="work-title">영화 'epoche' 포스터</h3>
-          </a>
+          </div>
+          <div class="uppercase text-[10px] text-gray-400 tracking-wider mb-1">Personal Project</div>
+          <div class="text-gray-400 text-sm">2025</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">To those who forgot how to see</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">시각적 자극에 무뎌진 현대인들에게 전하는 메시지를 담은 모션 그래픽.</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Motion</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Personal</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">AI</span>
+          </div>
+        </a>
 
-          <a href="#" class="work-card reveal" style="transition-delay: 0.2s;">
-            <div class="work-image-wrapper ratio-natural" style="background: none;">
-              <img src="https://i.postimg.cc/jdSB24bX/diidi-poseuteo-8.png" alt="To those who forgot how to see 포스터">
+        <!-- Project 4: Branding (Mumchit) -->
+        <a href="#" class="project-card group flex flex-col" data-category="branding">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/sxyKksjd/websaiteu-mog-eob.png" alt="Mumchit: Perfume Rebranding" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">View Project</span>
             </div>
-            <h3 class="work-title">To those who forgot how to see 포스터</h3>
-          </a>
-        </div>
+          </div>
+          <div class="uppercase text-[10px] text-gray-400 tracking-wider mb-1">Personal Project</div>
+          <div class="text-gray-400 text-sm">Nov 2025 - Dec 2025</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">Mumchit</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">향수 브랜드 '멈칫'의 아이덴티티를 재해석한 리브랜딩 및 패키지 디자인 제안.</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Branding</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Package</span>
+          </div>
+        </a>
+
+        <!-- Project 4.5: Branding (peekey) -->
+        <a href="#" class="project-card group flex flex-col" data-category="branding">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <img src="https://i.postimg.cc/QxchgqPX/peekey-mobailhwamyeonmog-eob.png" alt="peekey" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">View Project</span>
+            </div>
+          </div>
+          <div class="uppercase text-[10px] text-gray-400 tracking-wider mb-1">Personal Project</div>
+          <div class="text-gray-400 text-sm">2025</div>
+          <h3 class="font-bold text-xl mt-1 text-brand-black group-hover:text-gray-600 transition-colors">peekey</h3>
+          <p class="text-gray-600 leading-relaxed mt-2 text-sm line-clamp-2">모바일 환경에 최적화된 새로운 서비스 경험을 제공하는 UI/UX 브랜딩.</p>
+          <div class="flex gap-2 mt-3">
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">Branding</span>
+            <span class="bg-gray-100 text-gray-600 text-xs px-3 py-1 rounded-full">UI/UX</span>
+          </div>
+        </a>
+
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
-        <a href="https://instagram.com/archivejian_" target="_blank">Instagram</a>
+  <footer class="w-full px-6 py-12 md:px-16 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex gap-8 text-sm md:text-base font-medium">
+        <a href="mailto:choijian@sookmyung.ac.kr" class="hover:opacity-50 transition-opacity">Email</a>
+        <a href="https://instagram.com/archivejian_" target="_blank" class="hover:opacity-50 transition-opacity">Instagram</a>
       </div>
-      <p>© 2024 Jian Choi. All rights reserved.</p>
+      <p class="text-brand-gray text-sm">© 2024 Jian Choi. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="./main.js"></script>
-
-  <!-- Lightbox Detail Page Structure -->
-  <div class="lightbox" id="workLightbox">
-    <a href="#" class="lightbox-close" id="closeLightbox">&larr; Back to Work</a>
-    <div class="lightbox-content">
-      <h2 class="lightbox-title" id="lightboxTitle">Project Title</h2>
-      <div id="lightboxImages" style="width: 100%;"></div>
-    </div>
-  </div>
-
+  <!-- Filter Script -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll('.work-card');
-      const lightbox = document.getElementById('workLightbox');
-      const closeBtn = document.getElementById('closeLightbox');
-      const lbTitle = document.getElementById('lightboxTitle');
-      const lbImages = document.getElementById('lightboxImages');
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
 
-      // Add hover overlay dynamically to all cards
-      cards.forEach(card => {
-        const wrapper = card.querySelector('.work-image-wrapper');
-        // Ensure overlay isn't already there
-        if (wrapper && !wrapper.querySelector('.hover-overlay')) {
-          const overlay = document.createElement('div');
-          overlay.className = 'hover-overlay';
-          overlay.innerHTML = '<span class="hover-btn">상세 페이지 보기</span>';
-          wrapper.appendChild(overlay);
-        }
-
-        card.addEventListener('click', (e) => {
-          e.preventDefault();
-          
-          /* Extract Project Title */
-          const titleEl = card.querySelector('.work-title');
-          const titleText = titleEl ? titleEl.innerText : 'Project Detail';
-          
-          /* Extract all images inside the clicked card */
-          let imgs = [];
-          const cardImgs = card.querySelectorAll('img');
-          cardImgs.forEach(img => {
-            if (img.src) imgs.push(img.src);
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Reset styles
+          filterBtns.forEach(b => {
+            b.classList.remove('font-bold', 'text-brand-black');
+            b.classList.add('font-normal', 'text-brand-gray');
           });
-          
-          /* Placeholder Logic: Duplicate images up to 3 times to fit layout request */
-          if (imgs.length > 0) {
-            let mainSrc = imgs[0];
-            while (imgs.length < 3) {
-              imgs.push(mainSrc);
-            }
-          }
+          // Set active styles
+          btn.classList.remove('font-normal', 'text-brand-gray');
+          btn.classList.add('font-bold', 'text-brand-black');
 
-          /* Populate Lightbox */
-          lbTitle.innerText = titleText;
-          lbImages.innerHTML = '';
-          
-          imgs.forEach((src) => {
-            const wrap = document.createElement('div');
-            wrap.className = 'lightbox-image';
-            const imgEl = document.createElement('img');
-            imgEl.src = src;
-            wrap.appendChild(imgEl);
-            lbImages.appendChild(wrap);
-            
-            if (window.initImageFadeIn) {
-              window.initImageFadeIn(imgEl);
+          // Filter logic
+          const filterValue = btn.getAttribute('data-filter');
+          projectCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+              card.style.display = 'block';
+              setTimeout(() => card.style.opacity = '1', 50);
+            } else {
+              card.style.opacity = '0';
+              setTimeout(() => card.style.display = 'none', 300);
             }
           });
-
-          /* Show Lightbox */
-          lightbox.classList.add('show');
-          document.body.style.overflow = 'hidden'; // prevent bg scrolling
-          lightbox.scrollTo(0, 0); // start at top of detail page
         });
       });
-
-      if (closeBtn && lightbox) {
-        closeBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          lightbox.classList.remove('show');
-          document.body.style.overflow = '';
-        });
-      }
     });
   </script>
+
 </body>
 </html>
