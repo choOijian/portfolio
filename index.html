@@ -71,6 +71,7 @@
       <div class="flex gap-6 md:gap-10 mb-10 md:mb-16 border-b border-gray-200 pb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
         <button class="filter-btn text-lg md:text-xl font-bold text-brand-black" data-filter="all">All</button>
         <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="film">Film</button>
+        <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="ai">AI</button>
         <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="motion">Motion</button>
         <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="branding">Branding</button>
         <button class="filter-btn text-lg md:text-xl font-normal text-brand-gray hover:text-brand-black transition-colors" data-filter="etc">Etc</button>
@@ -79,9 +80,12 @@
       <!-- Project Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16" id="project-grid">
         <!-- Project 1: Film -->
-        <a href="#" class="project-card group" data-category="film">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+        <a href="https://youtu.be/U30gvPBCfpo" target="_blank" rel="noopener noreferrer" class="project-card group" data-category="film">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
             <img src="https://i.postimg.cc/JzjKKs3d/seukeulinsyas-2026-03-09-ohu-4-20-10.png" alt="단편영화 'Epoche'" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
+            </div>
           </div>
           <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Film]</div>
           <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">단편영화 'Epoche'</h3>
@@ -89,26 +93,47 @@
 
         <!-- Project 2: Film -->
         <a href="#" class="project-card group" data-category="film">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
             <img src="https://i.postimg.cc/9My7H90j/seukeulinsyas-2026-03-09-ohu-9-52-53-bogsabon.png" alt="칸쵸 광고 (학생 작업)" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">View Project</span>
+            </div>
           </div>
           <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Film]</div>
           <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">칸쵸 광고 (학생 작업)</h3>
         </a>
 
-        <!-- Project 3: Motion -->
-        <a href="#" class="project-card group" data-category="motion">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+        <!-- Project 3: AI -->
+        <a href="https://youtu.be/syqYr1-kX_4" target="_blank" rel="noopener noreferrer" class="project-card group" data-category="ai">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
             <!-- Placeholder -->
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
+            </div>
           </div>
-          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Motion]</div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[AI]</div>
           <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">The Last Piece Day</h3>
+        </a>
+
+        <!-- Project 3.5: AI -->
+        <a href="https://youtu.be/6zB1FerEbzk" target="_blank" rel="noopener noreferrer" class="project-card group" data-category="ai">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+            <!-- Placeholder -->
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">Watch on YouTube</span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[AI]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">본죽 AI 광고</h3>
         </a>
 
         <!-- Project 4: Branding -->
         <a href="#" class="project-card group" data-category="branding">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
             <img src="https://i.postimg.cc/sxyKksjd/websaiteu-mog-eob.png" alt="Mumchit: Perfume Rebranding" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">View Project</span>
+            </div>
           </div>
           <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Branding]</div>
           <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">Mumchit: Perfume Rebranding</h3>
@@ -116,8 +141,11 @@
 
         <!-- Project 5: Etc -->
         <a href="#" class="project-card group" data-category="etc">
-          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+          <div class="relative w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
             <!-- Placeholder -->
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="bg-white text-black px-5 py-2 md:px-6 md:py-3 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">View Project</span>
+            </div>
           </div>
           <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Etc]</div>
           <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">PROJECT : 보이지 않게 설계된 일상</h3>
