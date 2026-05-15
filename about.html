@@ -4,204 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Jian Choi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Pretendard Font -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-  <link rel="stylesheet" href="./style.css" />
-  <!-- Tailwind CSS CDN & Config -->
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
-          colors: { brand: { black: '#000000', gray: '#999999', lightGray: '#F5F5F5' } }
+          colors: {
+            brand: {
+              black: '#0D0D0D',
+              gray: '#999999',
+              lightGray: '#F5F5F5'
+            }
+          },
+          fontSize: {
+            '10': '10px'
+          }
         }
       }
     }
   </script>
+
   <style>
-    .about-page {
-      padding-top: calc(var(--spacing-xl) + 60px);
-      padding-bottom: var(--spacing-xl);
-      display: grid;
-      grid-template-columns: 4fr 8fr;
-      gap: var(--spacing-xl);
-      align-items: start;
-    }
+    body { background-color: #FDFDFD; color: #0D0D0D; }
 
-    .about-hero-image {
-      width: 100%;
-      max-width: 400px;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: 4px;
-      position: sticky;
-      top: calc(var(--spacing-xl) + 60px);
-    }
-
-    .about-content h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 400;
+    /* Large name overlay */
+    .hero-name {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 900;
       letter-spacing: -0.04em;
-      margin-bottom: var(--spacing-sm);
+      line-height: 0.9;
+      color: #0D0D0D;
+      mix-blend-mode: multiply;
     }
 
-    .about-content .role {
-      font-size: 1.5rem;
-      color: var(--color-text-muted);
-      margin-bottom: var(--spacing-lg);
-      font-weight: 300;
-    }
-
-    .intro-paragraph {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      font-weight: 300;
-      color: var(--color-text);
-      margin-bottom: var(--spacing-sm);
-    }
-
-    .intro-paragraph:last-child {
-      margin-bottom: var(--spacing-md);
-    }
-    
-    .strengths {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--color-text);
-      line-height: 1.6;
-    }
-
-    .strengths span {
-      display: inline-block;
-    }
-
-    .resume-section {
-      margin-top: var(--spacing-md);
-    }
-    
-    .resume-section h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: var(--spacing-sm);
-      color: var(--color-text);
+    /* Section label style */
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      color: #999999;
+      font-weight: 400;
     }
 
-    .resume-item {
-      display: flex;
-      gap: var(--spacing-md);
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--color-text-muted);
-      line-height: 1.6;
+    /* Strength chip */
+    .strength-chip {
+      border: 1px solid #D0D0D0;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #0D0D0D;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
-    .resume-year {
-      min-width: 60px;
-    }
-
-    .resume-details strong {
-      font-weight: 600;
-      color: var(--color-text);
-    }
-
-    @media (max-width: 900px) {
-      .about-page {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+    /* Sticky image on desktop */
+    @media (min-width: 768px) {
+      .hero-image-col {
+        position: sticky;
+        top: 0;
+        height: 100vh;
       }
-      .about-hero-image {
-        position: static;
-        max-width: 500px;
-      }
+    }
+
+    /* Divider line */
+    .section-divider {
+      border: none;
+      border-top: 1px solid #E8E8E8;
     }
   </style>
 </head>
-<body>
-  
+<body class="font-sans antialiased">
+
   <!-- Header -->
-  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent z-50">
-    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-[#000000]">Jian Choi.</a>
-    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium text-[#000000]">
-      <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
-      <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
-      <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
+  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent fixed top-0 left-0 right-0 z-50 mix-blend-multiply">
+    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-[#0D0D0D]">Jian Choi.</a>
+    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium text-[#0D0D0D]">
+      <a href="work.html" class="hover:opacity-40 transition-opacity duration-300">Work</a>
+      <a href="about.html" class="hover:opacity-40 transition-opacity duration-300">About</a>
+      <a href="contact.html" class="hover:opacity-40 transition-opacity duration-300">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="container about-page">
-      <div class="reveal reveal-immediate">
-        <img class="about-hero-image" src="https://i.postimg.cc/vZdQXqnt/IMG-0447.jpg" alt="Jian Choi Portrait">
+  <main class="flex flex-col md:flex-row min-h-screen">
+
+    <!-- LEFT: Portrait Column (4/10 width) -->
+    <div class="hero-image-col w-full md:w-[40%] relative overflow-hidden">
+      <img
+        src="https://i.postimg.cc/vZdQXqnt/IMG-0447.jpg"
+        alt="Jian Choi Portrait"
+        class="w-full h-full object-cover"
+        style="min-height: 60vh;"
+      >
+      <!-- Name overlay on image -->
+      <div class="absolute bottom-0 left-0 p-6 md:p-10">
+        <h1 class="hero-name text-white" style="mix-blend-mode: normal;">Jian<br>Choi</h1>
       </div>
-      
-      <div class="about-content reveal reveal-immediate" style="transition-delay: 0.2s;">
-        <h1>최지안</h1>
-        <p class="role">Visual Designer</p>
-        
-        <p class="intro-paragraph">
-          영상 그 자체를 좋아하며, 장면의 분위기와 감정을 관찰하고 그것을 시각적으로 풀어내는 디자이너입니다.
+    </div>
+
+    <!-- RIGHT: Content Column (6/10 width) -->
+    <div class="w-full md:w-[60%] px-8 md:px-16 lg:px-24 pt-32 pb-24 flex flex-col gap-20">
+
+      <!-- Intro -->
+      <section>
+        <p class="text-2xl md:text-3xl font-light leading-relaxed text-[#0D0D0D] tracking-tight">
+          영상 그 자체를 좋아하며,<br>
+          장면의 분위기와 감정을 관찰하고<br>
+          그것을 시각적으로 풀어내는 디자이너입니다.
         </p>
+      </section>
 
+      <hr class="section-divider">
 
-        <div class="resume-section">
-          <h3>Education</h3>
-          <div class="resume-item">
-            <span class="resume-year">2024 –</span>
-            <div class="resume-details">
-              <strong>숙명여자대학교</strong><br>
-              시각영상디자인과
+      <!-- Education -->
+      <section class="flex flex-col gap-6">
+        <span class="section-label">Education</span>
+        <div class="flex flex-col gap-4">
+          <div class="flex gap-8 items-start">
+            <span class="text-brand-gray text-sm font-light min-w-[72px]">2024 –</span>
+            <div>
+              <p class="font-semibold text-[#0D0D0D] text-base">숙명여자대학교</p>
+              <p class="text-brand-gray text-sm font-light mt-0.5">시각영상디자인과</p>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="resume-section">
-          <h3>Tools</h3>
-          <div class="strengths" style="margin-top: 0.8rem;">
-            <span>Premiere Pro</span> &middot;
-            <span>After Effects</span> &middot;
-            <span>Illustrator</span> &middot;
-            <span>Photoshop</span> &middot;
-            <span>Figma</span> &middot;
-            <span>Cinema 4D</span>
-          </div>
-        </div>
+      <hr class="section-divider">
 
-        <div class="resume-section">
-          <h3>Interests</h3>
-          <div class="strengths" style="margin-top: 0.8rem;">
-            <span>Music Video Art Direction</span> &middot;
-            <span>Motion Graphics Design</span> &middot;
-            <span>Multimedia Design</span> &middot;
-            <span>Film Production</span>
-          </div>
+      <!-- Tools -->
+      <section class="flex flex-col gap-6">
+        <span class="section-label">Tools</span>
+        <div class="flex flex-wrap gap-3">
+          <span class="text-[#0D0D0D] text-sm font-light">Premiere Pro</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">After Effects</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Illustrator</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Photoshop</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Figma</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Cinema 4D</span>
         </div>
+      </section>
 
-        <div class="resume-section">
-          <h3>Strengths</h3>
-          <div class="strengths" style="margin-top: 0.8rem;">
-            <span>Persistence</span> &middot;
-            <span>Composure</span> &middot;
-            <span>Cinematic Sensibility</span>
-          </div>
+      <hr class="section-divider">
+
+      <!-- Interests -->
+      <section class="flex flex-col gap-6">
+        <span class="section-label">Interests</span>
+        <div class="flex flex-wrap gap-3">
+          <span class="text-[#0D0D0D] text-sm font-light">Music Video Art Direction</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Motion Graphics Design</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Multimedia Design</span>
+          <span class="text-brand-gray text-sm">·</span>
+          <span class="text-[#0D0D0D] text-sm font-light">Film Production</span>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <hr class="section-divider">
+
+      <!-- Strengths -->
+      <section class="flex flex-col gap-6">
+        <span class="section-label">Strengths</span>
+        <div class="flex flex-wrap gap-3">
+          <div class="strength-chip">Persistence</div>
+          <div class="strength-chip">Composure</div>
+          <div class="strength-chip">Cinematic Sensibility</div>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-links">
-        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
-        <a href="https://instagram.com/archivejian_" target="_blank">Instagram</a>
+  <!-- Footer -->
+  <footer class="w-full px-6 py-12 md:px-16 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex gap-8 text-sm md:text-base font-medium">
+        <a href="mailto:choijian@sookmyung.ac.kr" class="hover:opacity-50 transition-opacity">Email</a>
+        <a href="https://instagram.com/archivejian_" target="_blank" class="hover:opacity-50 transition-opacity">Instagram</a>
       </div>
-      <p>© 2024 Jian Choi. All rights reserved.</p>
+      <p class="text-brand-gray text-sm">© 2024 Jian Choi. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="./main.js"></script>
 </body>
 </html>
