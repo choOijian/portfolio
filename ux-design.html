@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX Study — Jian Choi</title>
+  
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              black: '#000000',
+              gray: '#999999',
+              lightGray: '#F5F5F5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-brand-black font-sans min-h-screen flex flex-col antialiased selection:bg-brand-black selection:text-white">
+
+  <!-- Header -->
+  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent z-50">
+    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight">Jian Choi.</a>
+    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium">
+      <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
+      <a href="ux-design.html" class="hover:opacity-50 transition-opacity duration-300 font-bold">UX Study</a>
+      <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
+      <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex flex-col items-center px-6 md:px-16 pb-12 md:pb-24">
+    <!-- Page Header -->
+    <section class="w-full max-w-6xl flex flex-col pt-24 pb-16">
+      <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-3 text-brand-black">
+        UX Study
+      </h1>
+      <p class="text-xl md:text-2xl font-normal text-brand-gray tracking-tight">
+        주차별 UI/UX 디자인 연구 및 진행 과정
+      </p>
+    </section>
+
+    <!-- Study Grid -->
+    <section class="w-full max-w-6xl flex flex-col">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-16">
+        
+        <!-- Week 2 Card -->
+        <a href="#" class="project-card group block" id="week2Card">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-stone-900 to-amber-700 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 2 — Design Ethnography
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 2]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">디자인 에스노그라피</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">현장 관찰 리서치 및 심층 인터뷰를 통한 사용자 페인 포인트 분석</p>
+        </a>
+
+        <!-- Week 3 Card -->
+        <a href="week3.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-slate-950 to-indigo-900 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 3 — Good & Bad Design
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 3]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">좋은 디자인 & 나쁜 디자인 분석</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">우리 주변의 UI/UX 디자인 사례 분석 및 개선안 연구</p>
+        </a>
+
+        <!-- Week 4 Card -->
+        <a href="week4.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-neutral-900 to-emerald-900 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 4 — Research & Data Structure
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 4]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">리서치를 통한 데이터 분석 및 정보 구조화</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">맥락적 인터뷰, Affinity Diagram 작성 및 코딩 스킴 구조화</p>
+        </a>
+
+        <!-- Week 5 Card -->
+        <a href="week5.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-zinc-950 to-cyan-900 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 5 — Ideation & Architecture
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 5]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">아이디에이션 및 정보 구조 설계</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">HMW 문제 정의, User Journey Map 및 IA(Information Architecture) 설계</p>
+        </a>
+
+        <!-- Week 6 Card -->
+        <a href="week6.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-indigo-900 to-blue-500 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 6 — Prototyping & Usability Testing
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 6]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">프로토타이핑 및 사용성 평가</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">High-Fidelity 프로토타입 설계 및 UT(Usability Testing) 사용성 평가</p>
+        </a>
+
+        <!-- Week 7 Card -->
+        <a href="week7.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-zinc-900 to-neutral-500 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 7 — Feedback Iteration
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 7]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">피드백 반영 및 UI 흐름 개선</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">평가 피드백을 기반으로 한 사용자 태스크 플로우 수정 및 고도화</p>
+        </a>
+
+        <!-- Week 8 Card -->
+        <a href="week8.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-slate-900 to-slate-700 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 8 — Midterm Presentation
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 8]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">중간 발표</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">중간 디자인 결과물 발표 및 피드백 수렴</p>
+        </a>
+
+        <!-- Week 9 Card -->
+        <a href="week9.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-pink-950 to-rose-700 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 9 — GUI Style Guide
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 9]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">비주얼 컨셉 및 GUI 디자인 가이드</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">브랜드 아이덴티티 수립, 컬러/타이포그래피 및 UI 가이드라인 정의</p>
+        </a>
+
+        <!-- Week 10 Card -->
+        <a href="week10.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-violet-950 to-fuchsia-800 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 10 — Interaction Design
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 10]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">인터랙션 디자인 및 애니메이션</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">주요 화면 전환 및 마이크로 인터랙션 모션 상세 설계</p>
+        </a>
+
+        <!-- Week 11 Card -->
+        <a href="week11.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-purple-950 to-indigo-800 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 11 — Advanced Prototyping
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 11]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">고도화된 프로토타입 제작</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">Figma를 활용한 하이파이(Hi-Fi) 인터랙티브 프로토타입 구현</p>
+        </a>
+
+        <!-- Week 12 Card -->
+        <a href="week12.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-emerald-950 to-teal-800 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 12 — Usability Testing 2
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 12]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">2차 사용성 평가 및 보완</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">수정된 프로토타입 기반 사용성 테스트 진행 및 최종 문제점 해결</p>
+        </a>
+
+        <!-- Week 13 Card -->
+        <a href="week13.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-cyan-950 to-sky-800 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 13 — Design System
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 13]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">디자인 시스템</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">일관된 UI/UX 디자인을 위한 디자인 시스템 구축 및 컴포넌트 자산화</p>
+        </a>
+
+        <!-- Week 14 Card -->
+        <a href="week14.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-amber-950 to-yellow-800 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 14 — High-Fidelity Prototype
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 14]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">하이파이 프로토타입</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">실제 상용 서비스 수준의 인터랙션을 가진 고정밀 하이파이 프로토타입 구현</p>
+        </a>
+
+        <!-- Week 15 Card -->
+        <a href="week15.html" class="project-card group block">
+          <div class="w-full aspect-video bg-brand-lightGray rounded-xl mb-4 overflow-hidden transition-transform duration-500 group-hover:scale-[1.02] flex items-center justify-center">
+            <div class="w-full h-full bg-gradient-to-tr from-red-950 to-orange-800 flex items-center justify-center p-6 text-center">
+              <span class="text-white font-bold text-lg md:text-xl lg:text-2xl tracking-tight">
+                WEEK 15 — Final Presentation
+              </span>
+            </div>
+          </div>
+          <div class="text-brand-gray text-sm md:text-base font-medium mb-1">[Week 15]</div>
+          <h3 class="text-xl md:text-2xl font-bold text-brand-black group-hover:opacity-60 transition-opacity">최종 발표</h3>
+          <p class="text-sm md:text-base text-brand-gray mt-1">UX 디자인 프로젝트 최종 쇼케이스 및 전시 발표</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal for Week 2 -->
+  <div id="week2Lightbox" class="fixed inset-0 bg-white/98 z-[1000] flex flex-col justify-start overflow-y-auto opacity-0 pointer-events-none transition-opacity duration-300">
+    <a href="#" id="closeLightbox" class="absolute top-8 left-8 md:top-12 md:left-16 text-lg font-medium text-brand-gray hover:text-brand-black transition-colors">&larr; Back to List</a>
+    
+    <div class="max-w-4xl w-full mx-auto px-6 py-24 flex flex-col items-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-black mb-12 text-left w-full">Week 2 - 디자인 에스노그라피</h2>
+      
+      <div class="w-full mb-12 rounded-lg overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
+        <img src="https://i.postimg.cc/26Kwch19/eseunogeulapi1.png" alt="UX Design Project - 에스노그라피 현장 리서치" class="w-full h-auto">
+      </div>
+      
+      <div class="w-full rounded-lg overflow-hidden border border-gray-100 shadow-sm bg-gray-50">
+        <img src="https://i.postimg.cc/qRSFt9X9/eseunogeulapi2.png" alt="UX Design Project - 두 번째 이미지" class="w-full h-auto">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full py-8 md:py-12 text-center text-sm text-brand-gray border-t border-gray-100 mt-12">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex gap-6">
+        <a href="mailto:choijian@sookmyung.ac.kr" class="hover:text-brand-black transition-colors">Email</a>
+        <a href="https://instagram.com/archivejian_" target="_blank" class="hover:text-brand-black transition-colors">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const week2Card = document.getElementById('week2Card');
+      const week2Lightbox = document.getElementById('week2Lightbox');
+      const closeLightbox = document.getElementById('closeLightbox');
+
+      if (week2Card && week2Lightbox && closeLightbox) {
+        week2Card.addEventListener('click', (e) => {
+          e.preventDefault();
+          week2Lightbox.classList.remove('opacity-0', 'pointer-events-none');
+          document.body.style.overflow = 'hidden';
+          week2Lightbox.scrollTo(0, 0);
+        });
+
+        const closeFn = (e) => {
+          if (e) e.preventDefault();
+          week2Lightbox.classList.add('opacity-0', 'pointer-events-none');
+          document.body.style.overflow = '';
+        };
+
+        closeLightbox.addEventListener('click', closeFn);
+
+        // Close on clicking outside container
+        week2Lightbox.addEventListener('click', (e) => {
+          if (e.target === week2Lightbox) {
+            closeFn();
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Home Page specific styles */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: var(--spacing-xl);
+    }
+
+    .hero h1 {
+      font-size: clamp(5rem, 12vw, 10rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .hero p {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .intro-paragraph {
+      margin-top: 1rem;
+    }
+
+    .about-preview {
+      padding: var(--spacing-xl) 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .about-text h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      max-width: 600px;
+    }
+
+    .about-text p:last-of-type {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--color-text);
+      padding-bottom: 4px;
+    }
+
+    .btn:hover {
+      border-bottom-color: transparent;
+    }
+
+    .showreel-section {
+      padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .showreel-video {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16/9;
+      background-color: #eee;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .about-preview {
+        grid-template-columns: 1fr;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="./index.html" class="logo">Jian Choi.</a>
+      <nav class="nav-links">
+        <a href="./index.html" class="active">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./ux-design.html">UX Design</a>
+        <a href="./work.html">Work</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="container hero">
+      <h1 class="reveal reveal-immediate">CHOI JIAN</h1>
+    </section>
+
+    <!-- Showreel Video -->
+    <section class="container showreel-section reveal" style="transition-delay: 0.1s;">
+      <video class="showreel-video" controls muted playsinline poster="">
+        <source src="assets/video/showreel.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- About Preview -->
+    <section class="container about-preview reveal" style="transition-delay: 0.2s;">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <a href="./about.html" class="btn">Learn more</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/jianarchive" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

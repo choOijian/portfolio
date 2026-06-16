@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 15 — Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Tailwind CSS CDN & Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
+          colors: { brand: { black: '#000000', gray: '#999999', lightGray: '#F5F5F5' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    .detail-container {
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .back-btn {
+      align-self: flex-start;
+      margin-bottom: var(--spacing-lg);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition-fast, 0.2s ease);
+    }
+
+    .back-btn:hover {
+      color: var(--color-text, #000);
+    }
+
+    .detail-title-wrapper {
+      max-width: 100%;
+      text-align: left;
+      margin-bottom: calc(var(--spacing-lg) + 2rem);
+      width: 100%;
+    }
+
+    .detail-title-wrapper h2 {
+      font-size: 4rem;
+      margin-bottom: var(--spacing-sm);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--color-text);
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent z-50">
+    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-[#000000]">Jian Choi.</a>
+    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium text-[#000000]">
+      <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
+      <a href="ux-design.html" class="hover:opacity-50 transition-opacity duration-300 font-bold">UX Study</a>
+      <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
+      <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container detail-container reveal reveal-immediate">
+      <a href="./ux-design.html" class="back-btn">&larr; Back to List</a>
+      
+      <div class="detail-title-wrapper">
+        <h2>최종 발표</h2>
+      </div>
+
+      <!-- Final Presentation Images (Seamless) -->
+      <div class="w-full flex flex-col overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+        <img src="https://i.postimg.cc/kD3CLMCx/Page-1.png" alt="최종 발표 - Page 1" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/bdcP4YPD/Page-2.png" alt="최종 발표 - Page 2" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/c6yWP1WJ/Page-3.png" alt="최종 발표 - Page 3" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/7b84jP46/Page-4.png" alt="최종 발표 - Page 4" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/wMsHWyCN/Page-5.png" alt="최종 발표 - Page 5" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/ZnyZfBG0/Page-6.png" alt="최종 발표 - Page 6" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/x8bYsJwC/Page-7.png" alt="최종 발표 - Page 7" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/tJVyrZKJ/Page-8.png" alt="최종 발표 - Page 8" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/x8bYsJwc/Page-9.png" alt="최종 발표 - Page 9" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/GtsrM8Wd/Page-10.png" alt="최종 발표 - Page 10" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/LXKrHC7b/Page-11.png" alt="최종 발표 - Page 11" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/mrFvWfXW/Page-12.png" alt="최종 발표 - Page 12" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/Y9KJpnVZ/Page-13.png" alt="최종 발표 - Page 13" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/xdbwVDs4/Page-14.png" alt="최종 발표 - Page 14" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/GpsWnwMV/Page-15.png" alt="최종 발표 - Page 15" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/25BsNRHX/Page-16.png" alt="최종 발표 - Page 16" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/VNbxPQ7t/Page-17.png" alt="최종 발표 - Page 17" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/jjJpY08z/Page-18.png" alt="최종 발표 - Page 18" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/kgH0HXyN/Page-19.png" alt="최종 발표 - Page 19" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/P5NGK81X/Page-20.png" alt="최종 발표 - Page 20" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/tCZt5q7w/Page-21.png" alt="최종 발표 - Page 21" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/yYgXP1W5/Page-22.png" alt="최종 발표 - Page 22" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/gkXqDzr7/Page-23.png" alt="최종 발표 - Page 23" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/Prpz4XN6/Page-24.png" alt="최종 발표 - Page 24" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/gkXqDzr4/Page-25.png" alt="최종 발표 - Page 25" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/L6YBT9h3/Page-26.png" alt="최종 발표 - Page 26" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/wTycVq3L/Page-27.png" alt="최종 발표 - Page 27" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/02Mdfkrp/Page-28.png" alt="최종 발표 - Page 28" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/7YGMVHbM/Page-29.png" alt="최종 발표 - Page 29" class="w-full h-auto block">
+        <img src="https://i.postimg.cc/J7d5ZD7Q/Page-30.png" alt="최종 발표 - Page 30" class="w-full h-auto block">
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/archivejian_" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>

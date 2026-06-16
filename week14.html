@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 14 — Jian Choi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Tailwind CSS CDN & Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Pretendard', 'Inter', 'sans-serif'] },
+          colors: { brand: { black: '#000000', gray: '#999999', lightGray: '#F5F5F5' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    .detail-container {
+      padding-top: calc(var(--spacing-xl) + 60px);
+      padding-bottom: var(--spacing-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .back-btn {
+      align-self: flex-start;
+      margin-bottom: var(--spacing-lg);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition-fast, 0.2s ease);
+    }
+
+    .back-btn:hover {
+      color: var(--color-text, #000);
+    }
+
+    .detail-title-wrapper {
+      max-width: 100%;
+      text-align: left;
+      margin-bottom: calc(var(--spacing-lg) + 2rem);
+      width: 100%;
+    }
+
+    .detail-title-wrapper h2 {
+      font-size: 4rem;
+      margin-bottom: var(--spacing-sm);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--color-text);
+      word-break: keep-all;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="w-full px-6 py-8 md:px-16 md:py-12 flex justify-between items-center bg-transparent z-50">
+    <a href="index.html" class="text-2xl md:text-3xl font-bold tracking-tight text-[#000000]">Jian Choi.</a>
+    <nav class="flex gap-6 md:gap-12 text-base md:text-lg font-medium text-[#000000]">
+      <a href="work.html" class="hover:opacity-50 transition-opacity duration-300">Work</a>
+      <a href="ux-design.html" class="hover:opacity-50 transition-opacity duration-300 font-bold">UX Study</a>
+      <a href="about.html" class="hover:opacity-50 transition-opacity duration-300">About</a>
+      <a href="contact.html" class="hover:opacity-50 transition-opacity duration-300">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container detail-container reveal reveal-immediate">
+      <a href="./ux-design.html" class="back-btn">&larr; Back to List</a>
+      
+      <div class="detail-title-wrapper">
+        <h2>하이파이 프로토타입</h2>
+      </div>
+
+      <!-- Placeholder Content Area -->
+      <div class="w-full py-24 flex flex-col items-center justify-center border border-dashed border-gray-200 rounded-2xl bg-brand-lightGray/30 text-center px-6">
+        <div class="w-16 h-16 rounded-full border-4 border-brand-black/10 border-t-brand-black animate-spin mb-6"></div>
+        <h3 class="text-2xl font-bold text-brand-black mb-2">콘텐츠 준비 중</h3>
+        <p class="text-brand-gray max-w-md">실제 상용 서비스 수준의 인터랙션을 가진 고정밀 하이파이 프로토타입 구현 단계의 자료가 곧 업데이트될 예정입니다.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="mailto:choijian@sookmyung.ac.kr">Email</a>
+        <a href="https://instagram.com/archivejian_" target="_blank">Instagram</a>
+      </div>
+      <p>© 2024 Jian Choi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+</html>
